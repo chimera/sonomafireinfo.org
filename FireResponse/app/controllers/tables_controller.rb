@@ -22,4 +22,8 @@ class TablesController < ApplicationController
   def shelters
     render json: Shelters.all.to_json
   end
+
+  def volunteering
+    render json: Volunteering.all.to_json
+  end
 end
