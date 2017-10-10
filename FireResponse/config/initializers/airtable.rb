@@ -9,6 +9,6 @@ AirtableSheets = {
   support_services: { klass: SupportServices },
   gas_stations: { klass: GasStations},
   markets: { klass: Markets },
-  shelters: { klass: Shelters },
+  shelters: { klass: Shelters, sort: { "Name" => "asc" } },
   volunteering: { klass: Volunteering },
 }
