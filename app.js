@@ -1,4 +1,5 @@
 require('whatwg-fetch')
+require('./styles.scss')
 
 const React = require('react')
 const ReactDOM = require('react-dom')
@@ -20,7 +21,7 @@ class ResourceList extends React.Component {
         return response.json()
       })
       .then(json => {
-        console.log('parsed json', json)
+        console.log('RESPONSE:', json)
         this.setState(
           Object.assign({}, this.state, { items: json, loading: false })
         )

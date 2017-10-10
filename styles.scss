@@ -2,13 +2,13 @@
 $red: #ea3515;
 
 // Fonts
-$font-family-serif: "Roboto Slab", serif;
-$font-family-sans-serif: "Open Sans", sans-serif;
+$font-family-serif: 'Roboto Slab', serif;
+$font-family-sans-serif: 'Open Sans', sans-serif;
 $headings-font-family: $font-family-serif;
 $font-family-base: $font-family-sans-serif;
 $h2-font-size: 2.6rem;
 
-@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import './node_modules/bootstrap/scss/bootstrap.scss';
 
 .section,
 .hero {
@@ -17,4 +17,13 @@ $h2-font-size: 2.6rem;
 
 .hero {
   background: $gray-200;
+}
+
+.main-heading {
+  font-size: 4em;
+  @include media-breakpoint-down(md) {
+    & {
+      font-size: 2.5em;
+    }
+  }
 }
