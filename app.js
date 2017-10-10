@@ -88,7 +88,7 @@ function Table({ error, loading, items }) {
 
 function formatCell(col, value) {
   // Date
-  if (col.toLowerCase() === 'last updated') {
+  if (col.toLowerCase() === 'last updated' && value) {
     const date = new Date(value)
     return `${date.getMonth() +
       1}/${date.getDate()} at ${date.getHours()}:${date.getMinutes()}`
@@ -112,7 +112,6 @@ ReactDOM.render(
   <SmartTable url="http://app.tubbsfireinfo.com/recent_news.json" />,
   document.getElementById('resource-list')
 )
-
 ReactDOM.render(
   <SmartTable url="http://app.tubbsfireinfo.com/gas_stations.json" />,
   document.getElementById('gas-stations')
@@ -121,4 +120,9 @@ ReactDOM.render(
 ReactDOM.render(
   <SmartTable url="http://app.tubbsfireinfo.com/markets.json" />,
   document.getElementById('markets')
+)
+
+ReactDOM.render(
+  <SmartTable url="http://app.tubbsfireinfo.com/shelters.json" />,
+  document.getElementById('shelters')
 )

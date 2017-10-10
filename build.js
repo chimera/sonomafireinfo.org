@@ -10013,7 +10013,7 @@ function Table({ error, loading, items }) {
 
 function formatCell(col, value) {
   // Date
-  if (col.toLowerCase() === 'last updated') {
+  if (col.toLowerCase() === 'last updated' && value) {
     const date = new Date(value);
     return `${date.getMonth() + 1}/${date.getDate()} at ${date.getHours()}:${date.getMinutes()}`;
   }
@@ -10037,10 +10037,11 @@ function Row({ columns, item }) {
 }
 
 ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.tubbsfireinfo.com/recent_news.json' }), document.getElementById('resource-list'));
-
 ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.tubbsfireinfo.com/gas_stations.json' }), document.getElementById('gas-stations'));
 
 ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.tubbsfireinfo.com/markets.json' }), document.getElementById('markets'));
+
+ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.tubbsfireinfo.com/shelters.json' }), document.getElementById('shelters'));
 
 /***/ }),
 /* 343 */

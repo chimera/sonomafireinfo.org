@@ -27,7 +27,7 @@ const config = {
     new ExtractTextPlugin('output.css'),
     new webpack.IgnorePlugin(/\.\/locale$/),
   ],
-  devtool: 'eval',
+  // devtool: 'eval',
 }
 
 module.exports = config
