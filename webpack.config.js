@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const config = {
-  entry: ['./app.js'],
+  entry: ['babel-polyfill', './app.js'],
   output: {
     path: __dirname,
     filename: 'build.js',
@@ -23,8 +23,11 @@ const config = {
       },
     ],
   },
-  plugins: [new ExtractTextPlugin('output.css')],
-  devtool: 'eval',
+  plugins: [
+    new ExtractTextPlugin('output.css'),
+    new webpack.IgnorePlugin(/\.\/locale$/),
+  ],
+  // devtool: 'eval',
 }
 
 module.exports = config

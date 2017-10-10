@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tubb"s Fire Information - Santa Rosa, Sonoma County Fire News, Resources and Contacts</title>
+  <title>Tubb's Fire Information - Santa Rosa, Sonoma County Fire News, Resources and Contacts</title>
+  <meta name="description" content="News, resources, contacts, list of open gas stations and markets and much more. A central location for Tubb's fire information.">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:Open+Sans:400,700"
     rel="stylesheet">
@@ -34,6 +35,10 @@
           <i class="fa fa-book mr-2"></i>
           Resources
         </a>
+        <a href="#shelters" class="btn btn-primary btn-lg mr-3 mb-3" taget="_blank">
+          <i class="fa fa-home mr-2"></i>
+          Shelters
+        </a>
         <a href="#volunteer" class="btn btn-lg btn-info mr-3 mb-3">
           <i class="fa fa-handshake-o mr-2"></i>
           Volunteer
@@ -60,16 +65,12 @@
     <div class="container">
       <h2 class="text-center mb-3">Updates</h2>
       <p class="lead my-4 text-center">
-        <a href="https://airtable.com/shrS4LGsCBTMULwBk" class="btn btn-primary">
+        <a href="https://airtable.com/shrS4LGsCBTMULwBk" class="btn btn-primary" target="_blank">
           <i class="fa fa-envelope-o mr-2"></i>
           Send in new leads
         </a>
       </p>
-      <div class="row">
-        <div class="col-sm-10 mx-auto">
-          <div id="resource-list"></div>
-        </div>
-      </div>
+      <div id="resource-table"></div>
     </div>
   </div>
 
@@ -119,10 +120,42 @@
                 Road closures map
               </a>
             </li>
-
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div id="shelters" class="bg-light section">
+    <div class="container-fluid">
+      <h2 class="mb-3 text-center">
+        <i class="fa fa-home mr-3"></i>
+        Shelters
+      </h2>
+      <p class="lead mb-5 text-center">A list of shelters known to be open.</p>
+      <div id="shelters-table"></div>
+    </div>
+  </div>
+
+  <div id="gas-stations" class="section">
+    <div class="container-fluid">
+      <h2 class="mb-3 text-center">
+        <i class="fa fa-car mr-3"></i>
+        Gas Stations
+      </h2>
+      <p class="lead mb-5 text-center">A list of gas stations known to be open.</p>
+      <div id="gas-stations-table"></div>
+    </div>
+  </div>
+
+  <div id="markets" class="bg-light section">
+    <div class="container-fluid">
+      <h2 class="mb-3 text-center">
+        <i class="fa fa-cutlery mr-3"></i>
+        Markets
+      </h2>
+      <p class="lead mb-5 text-center">A list of markets known to be open.</p>
+      <div id="markets-table"></div>
     </div>
   </div>
 
