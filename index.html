@@ -13,6 +13,13 @@
 
 <body>
 
+  <div class="section bg-danger text-center text-white">
+    <h3 class="">
+      Signup for live alerts by texting your ZIP code to
+      <a href="tel:888777" class="text-warning">888-777</a>
+    </h3>
+  </div>
+
   <div class="section bg-light text-center">
     <div class="container">
       <h1 class="display-2">Tubb's Fire Info</h1>
@@ -49,57 +56,12 @@
     </div>
   </div>
 
-  <div class="section bg-danger text-center text-white">
-    <h3 class="">
-      Signup for live alerts by texting your ZIP code to
-      <a href="tel:888777" class="text-warning">888-777</a>
-    </h3>
-  </div>
-
   <div id="news" class="section">
     <div class="container">
       <h2 class="text-center mb-3">Updates</h2>
-      <p class="text-center mb-5">
-        <small class="text-muted">Last updated of 10/9 8pm</small>
-      </p>
       <div class="row">
         <div class="col-sm-10 mx-auto">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <i class="fa fa-warning mr-3"></i>
-              Mandatory curfew in effect 6:45pm to 7:15am in mandatory evacuation areas. Violators
-              subject to arrest
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-warning mr-3"></i>
-              Sonoma County Sheriff asks residents who are not evacuating to stay off the roads
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-warning mr-3"></i>
-              Residents of the Larkfield area (north of Santa Rosa) are being advised not to drink
-              their tap water
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-warning mr-3"></i>
-              PG&E has cut natural gas service in Kenwood, Santa Rosa, and other areas affected
-              by fires
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-warning mr-3"></i>
-
-              The Sebastopol Community Center evacuation site is merging with Analy High School
-              evacuation site. The Sebastopol Community Center is closed. Please
-              bring all donations to Analy High School (7:30pm)
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-warning mr-3"></i>
-              SSU, JC and most other schools have cancelled class for today
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-warning mr-3"></i>
-              Oliver’s in Rohnert Park is currently open and offering free coffee and tea.
-            </li>
-          </ul>
+          <div id="resource-list"></div>
         </div>
       </div>
     </div>
@@ -221,6 +183,8 @@
       </p>
     </div>
   </div>
+
+  <script async src="/build.js"></script>
 
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-599674-49"></script>
