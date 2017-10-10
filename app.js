@@ -73,7 +73,7 @@ function Table({ error, loading, items }) {
 
   const columns = Object.values(items[0].column_mappings)
   return (
-    <table className="table table-hover">
+    <table className="table table-hover table-responsive">
       <thead>
         <tr>{columns.map((col, key) => <th key={key}>{col}</th>)}</tr>
       </thead>
@@ -86,27 +86,47 @@ function Table({ error, loading, items }) {
   )
 }
 
-function formatCell(col, value) {
-  // Date
-  if (col.toLowerCase() === 'last updated' && value) {
-    const date = new Date(value)
-    return `${date.getMonth() +
-      1}/${date.getDate()} at ${date.getHours()}:${date.getMinutes()}`
-  } else if (value === true) {
-    return '✅'
-  } else if (value === false) {
-    return '❌'
+function Cell({ column, value }) {
+  if (!value) {
+    return null
   }
 
-  return value
+  if (column.toLowerCase() === 'last updated' && value) {
+    const date = new Date(value)
+    return (
+      <span>{`${date.getMonth() +
+        1}/${date.getDate()} at ${date.getHours()}:${date.getMinutes()}`}</span>
+    )
+  }
+
+  if (value === true) {
+    return <span>✅</span>
+  }
+
+  if (value === false) {
+    return <span>❌</span>
+  }
+
+  if (column.toLowerCase() === 'source') {
+    return (
+      <a href={value} target="_blank">
+        View source
+      </a>
+    )
+  }
+
+  return <span>{value}</span>
 }
 
 function Row({ columns, item }) {
   return (
     <tr>
       {columns.map((col, key) => {
-        const cell = formatCell(col, item.fields[col])
-        return <td key={key}>{cell}</td>
+        return (
+          <td key={key}>
+            <Cell column={col} value={item.fields[col]} />
+          </td>
+        )
       })}
     </tr>
   )

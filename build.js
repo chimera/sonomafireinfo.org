@@ -9989,7 +9989,7 @@ function Table({ error, loading, items }) {
   const columns = Object.values(items[0].column_mappings);
   return React.createElement(
     'table',
-    { className: 'table table-hover' },
+    { className: 'table table-hover table-responsive' },
     React.createElement(
       'thead',
       null,
@@ -10011,18 +10011,49 @@ function Table({ error, loading, items }) {
   );
 }
 
-function formatCell(col, value) {
-  // Date
-  if (col.toLowerCase() === 'last updated' && value) {
-    const date = new Date(value);
-    return `${date.getMonth() + 1}/${date.getDate()} at ${date.getHours()}:${date.getMinutes()}`;
-  } else if (value === true) {
-    return '✅';
-  } else if (value === false) {
-    return '❌';
+function Cell({ column, value }) {
+  if (!value) {
+    return null;
   }
 
-  return value;
+  if (column.toLowerCase() === 'last updated' && value) {
+    const date = new Date(value);
+    return React.createElement(
+      'span',
+      null,
+      `${date.getMonth() + 1}/${date.getDate()} at ${date.getHours()}:${date.getMinutes()}`
+    );
+  }
+
+  if (value === true) {
+    return React.createElement(
+      'span',
+      null,
+      '\u2705'
+    );
+  }
+
+  if (value === false) {
+    return React.createElement(
+      'span',
+      null,
+      '\u274C'
+    );
+  }
+
+  if (column.toLowerCase() === 'source') {
+    return React.createElement(
+      'a',
+      { href: value, target: '_blank' },
+      'View source'
+    );
+  }
+
+  return React.createElement(
+    'span',
+    null,
+    value
+  );
 }
 
 function Row({ columns, item }) {
@@ -10030,11 +10061,10 @@ function Row({ columns, item }) {
     'tr',
     null,
     columns.map((col, key) => {
-      const cell = formatCell(col, item.fields[col]);
       return React.createElement(
         'td',
         { key: key },
-        cell
+        React.createElement(Cell, { column: col, value: item.fields[col] })
       );
     })
   );
