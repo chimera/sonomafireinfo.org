@@ -1,0 +1,9 @@
+$red: #c16247;
+$font-family-sans-serif: "Roboto Slab", serif;
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+.hero {
+  background: $gray-200;
+  padding: 5em 0;
+}

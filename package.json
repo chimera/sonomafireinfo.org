@@ -1,0 +1,26 @@
+{
+  "name": "tubbsfireinfo.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "node-sass styles.scss output.css",
+    "dev": "npm run build -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chimera/tubbsfireinfo.com.git"
+  },
+  "author": "Dana Woodman <dana@danawoodman.com> (http://danawoodman.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chimera/tubbsfireinfo.com/issues"
+  },
+  "homepage": "https://github.com/chimera/tubbsfireinfo.com#readme",
+  "dependencies": {
+    "bootstrap": "4.0.0-beta"
+  },
+  "devDependencies": {
+    "node-sass": "4.5.3"
+  }
+}
