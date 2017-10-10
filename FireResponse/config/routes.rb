@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  resources :recent_news
+  ['recent_news', 'resources', 'support_services', 'gas_stations', 'markets', 'shelters'].each do |x|
+    get "/#{x}", to: "tables##{x}"
+  end
 end
