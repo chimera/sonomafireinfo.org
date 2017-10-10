@@ -10,13 +10,12 @@ $h2-font-size: 2.6rem;
 
 @import './node_modules/bootstrap/scss/bootstrap.scss';
 
-.section,
-.hero {
+.section {
   padding: 4.5em 0;
-}
 
-.hero {
-  background: $gray-200;
+  &:nth-child(even) {
+    background: $gray-100;
+  }
 }
 
 .main-heading {

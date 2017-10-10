@@ -1,5 +1,6 @@
-const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const webpack = require('webpack')
 
 const config = {
   entry: ['babel-polyfill', './app.js'],
@@ -26,6 +27,7 @@ const config = {
   plugins: [
     new ExtractTextPlugin('output.css'),
     new webpack.IgnorePlugin(/\.\/locale$/),
+    new UglifyJSPlugin(),
   ],
   // devtool: 'eval',
 }

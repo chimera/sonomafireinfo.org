@@ -5552,12 +5552,10 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
-.section,
-.hero {
+.section {
   padding: 4.5em 0; }
-
-.hero {
-  background: #e9ecef; }
+  .section:nth-child(even) {
+    background: #f8f9fa; }
 
 .main-heading {
   font-size: 4em; }
