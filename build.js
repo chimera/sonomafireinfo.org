@@ -10016,6 +10016,10 @@ function formatCell(col, value) {
   if (col.toLowerCase() === 'last updated' && value) {
     const date = new Date(value);
     return `${date.getMonth() + 1}/${date.getDate()} at ${date.getHours()}:${date.getMinutes()}`;
+  } else if (value === true) {
+    return '✅';
+  } else if (value === false) {
+    return '❌';
   }
 
   return value;
