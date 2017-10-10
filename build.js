@@ -10040,12 +10040,12 @@ function Row({ columns, item }) {
   );
 }
 
-ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.tubbsfireinfo.com/recent_news.json' }), document.getElementById('resource-table'));
-ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.tubbsfireinfo.com/gas_stations.json' }), document.getElementById('gas-stations-table'));
+ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.sonomafireinfo.com/recent_news.json' }), document.getElementById('resource-table'));
+ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.sonomafireinfo.com/gas_stations.json' }), document.getElementById('gas-stations-table'));
 
-ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.tubbsfireinfo.com/markets.json' }), document.getElementById('markets-table'));
+ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.sonomafireinfo.com/markets.json' }), document.getElementById('markets-table'));
 
-ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.tubbsfireinfo.com/shelters.json' }), document.getElementById('shelters-table'));
+ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.sonomafireinfo.com/shelters.json' }), document.getElementById('shelters-table'));
 
 /***/ }),
 /* 343 */
