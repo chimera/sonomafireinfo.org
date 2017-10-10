@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: fireresponse
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fireresponse
+    spec:
+      containers:
+      # - name: fireresponse-import
+      #   imagePullPolicy: Always
+      #   image: gcr.io/opszero-173723/fireresponse:latest
+      #   command: ["bundle",  "exec", "rake", "infra_dump:gather"]
+      - name: fireresponse
+        image: gcr.io/opszero-173723/fireresponse:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: fireresponse
+spec:
+  type: LoadBalancer
+  selector:
+    app: fireresponse
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 3000
