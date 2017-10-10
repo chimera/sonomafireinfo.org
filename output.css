@@ -68,7 +68,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Open Sans", serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
@@ -327,7 +327,7 @@ h1, .h1 {
   font-size: 2.5rem; }
 
 h2, .h2 {
-  font-size: 2.5rem; }
+  font-size: 2.6rem; }
 
 h3, .h3 {
   font-size: 1.75rem; }
@@ -3333,7 +3333,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Open Sans", serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -3415,7 +3415,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans", serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;

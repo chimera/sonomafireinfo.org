@@ -3,10 +3,10 @@ $red: #c16247;
 
 // Fonts
 $font-family-serif: "Roboto Slab", serif;
-$font-family-sans-serif: "Open Sans", serif;
+$font-family-sans-serif: "Open Sans", sans-serif;
 $headings-font-family: $font-family-serif;
 $font-family-base: $font-family-sans-serif;
-$h2-font-size: 2.5rem;
+$h2-font-size: 2.6rem;
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 
