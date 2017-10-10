@@ -5,6 +5,8 @@ $red: #c16247;
 $font-family-serif: "Roboto Slab", serif;
 $font-family-sans-serif: "Open Sans", serif;
 $headings-font-family: $font-family-serif;
+$font-family-base: $font-family-sans-serif;
+$h2-font-size: 2.5rem;
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 
