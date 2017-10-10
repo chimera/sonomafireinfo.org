@@ -1,9 +1,21 @@
+// Colors
 $red: #c16247;
-$font-family-sans-serif: "Roboto Slab", serif;
+
+// Fonts
+$font-family-serif: "Roboto Slab", serif;
+$font-family-sans-serif: "Open Sans", serif;
+$headings-font-family: $font-family-serif;
 
 @import "./node_modules/bootstrap/scss/bootstrap.scss";
 
+.section,
+.hero {
+  padding: 5em 0;
+}
+
 .hero {
   background: $gray-200;
-  padding: 5em 0;
+}
+
+.section {
 }

@@ -68,7 +68,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Roboto Slab", serif;
+  font-family: "Open Sans", serif;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
@@ -318,7 +318,7 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
+  font-family: "Roboto Slab", serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
@@ -3333,7 +3333,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Roboto Slab", serif;
+  font-family: "Open Sans", serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -3415,7 +3415,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Roboto Slab", serif;
+  font-family: "Open Sans", serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -5552,6 +5552,9 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
+.section,
 .hero {
-  background: #e9ecef;
   padding: 5em 0; }
+
+.hero {
+  background: #e9ecef; }
