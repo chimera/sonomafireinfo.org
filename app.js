@@ -110,7 +110,7 @@ function Header({ schema }) {
 function Row({ item, schema }) {
   const cells = schema.map(col => {
     const column = col.name
-    const link = col.link
+    const link = item.fields[col.link]
     const value = item.fields[column]
     return { column, value, link }
   })
