@@ -126,6 +126,26 @@ function Cross() {
   return <span>❌</span>
 }
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { error: false }
+  }
+
+  componentDidCatch(error, info) {
+    this.setState({ error: true })
+    console.error(error, info)
+  }
+
+  render() {
+    if (this.state.error) {
+      return <Error />
+    }
+
+    return this.props.children
+  }
+}
+
 class SmartTable extends React.Component {
   constructor(props) {
     super(props)
@@ -134,13 +154,6 @@ class SmartTable extends React.Component {
       loading: false,
       items: [],
     }
-  }
-
-  componentDidCatch(error, info) {
-    // Display fallback UI
-    this.setState({ error })
-    // You can also log the error to an error reporting service
-    console.error(error, info)
   }
 
   async componentWillMount() {
@@ -182,47 +195,55 @@ class SmartTable extends React.Component {
 }
 
 ReactDOM.render(
-  <SmartTable
-    url="http://app.sonomafireinfo.com/v2/recent_news.json"
-    schema={[
-      { name: 'Description', link: 'Source' },
-      { name: 'Last Updated', type: 'date' },
-    ]}
-  />,
+  <ErrorBoundary>
+    <SmartTable
+      url="http://app.sonomafireinfo.com/v2/recent_news.json"
+      schema={[
+        { name: 'Description', link: 'Source' },
+        { name: 'Last Updated', type: 'date' },
+      ]}
+    />
+  </ErrorBoundary>,
   document.getElementById('recent-news-table')
 )
 
 ReactDOM.render(
-  <SmartTable
-    url="http://app.sonomafireinfo.com/v2/resources.json"
-    schema={[{ name: 'Name', link: 'Source' }, { name: 'Phone' }]}
-  />,
+  <ErrorBoundary>
+    <SmartTable
+      url="http://app.sonomafireinfo.com/v2/resources.json"
+      schema={[{ name: 'Name', link: 'Source' }, { name: 'Phone' }]}
+    />
+  </ErrorBoundary>,
   document.getElementById('resources-table')
 )
 
 ReactDOM.render(
-  <SmartTable
-    url="http://app.sonomafireinfo.com/v2/gas_stations.json"
-    schema={[
-      { name: 'Name' },
-      { name: 'Address' },
-      { name: 'Phone' },
-      { name: 'Last Updated', type: 'date' },
-    ]}
-  />,
+  <ErrorBoundary>
+    <SmartTable
+      url="http://app.sonomafireinfo.com/v2/gas_stations.json"
+      schema={[
+        { name: 'Name' },
+        { name: 'Address' },
+        { name: 'Phone' },
+        { name: 'Last Updated', type: 'date' },
+      ]}
+    />
+  </ErrorBoundary>,
   document.getElementById('gas-stations-table')
 )
 
 ReactDOM.render(
-  <SmartTable
-    url="http://app.sonomafireinfo.com/v2/markets.json"
-    schema={[
-      { name: 'Name' },
-      { name: 'Address' },
-      { name: 'Phone' },
-      { name: 'Last Updated', type: 'date' },
-    ]}
-  />,
+  <ErrorBoundary>
+    <SmartTable
+      url="http://app.sonomafireinfo.com/v2/markets.json"
+      schema={[
+        { name: 'Name' },
+        { name: 'Address' },
+        { name: 'Phone' },
+        { name: 'Last Updated', type: 'date' },
+      ]}
+    />
+  </ErrorBoundary>,
   document.getElementById('markets-table')
 )
 
@@ -241,106 +262,110 @@ ReactDOM.render(
 
 // TODO: make a different structure
 ReactDOM.render(
-  <SmartTable
-    url="http://app.sonomafireinfo.com/v2/shelters.json"
-    renderer={({ items }) => {
-      return (
-        <div className="list-group">
-          {items.map((item, key) => {
-            const fields = item.fields
-            return (
-              <div className="list-group-item" key={key}>
-                {fields['Last Updated'] && (
-                  <small className="float-right text-muted">
-                    <DateField date={fields['Last Updated']} />
-                  </small>
-                )}
-                <h5>{fields.Name}</h5>
-                <div className="mt-2">
-                  <small>
-                    {fields.Address && (
-                      <span className="mr-3">
-                        <i className="fa fa-home mr-2" />
-                        {fields.Address}
-                      </span>
-                    )}
-                    {fields.Phone && (
-                      <span className="mr-3">
-                        <i className="fa fa-phone mr-2" />
-                        {fields.Phone}
-                      </span>
-                    )}
-                    {fields.Email && (
-                      <span className="mr-3">
-                        <i className="fa fa-envelope-o mr-2" />
-                        {fields.Email}
-                      </span>
-                    )}
-                  </small>
-                </div>
-                <div className="mt-2">
-                  <small>
-                    {fields['At capacity'] && (
-                      <span className="mr-3" title="At capacity">
-                        <span className="mr-2">❌</span> At Capacity
-                      </span>
-                    )}
-                    {fields['Elder Care'] && (
-                      <span className="mr-3" title="Has elder care">
-                        <span className="mr-2">👵</span> Elder Care
-                      </span>
-                    )}
-                    {fields['Hablan español'] && (
-                      <span className="mr-3" title="Hablan Español">
-                        <span className="mr-2">🇲🇽</span> Hablan Español
-                      </span>
-                    )}
-                    {fields['Red Cross Facility'] && (
-                      <span className="mr-3" title="Red Cross Facility">
-                        <span className="mr-2">🏥</span> Red Cross Facility
-                      </span>
-                    )}
-                  </small>
-                </div>
-                {fields['Donation needs'] && (
-                  <div className="mt-3 text-muted">
+  <ErrorBoundary>
+    <SmartTable
+      url="http://app.sonomafireinfo.com/v2/shelters.json"
+      renderer={({ items }) => {
+        return (
+          <div className="list-group">
+            {items.map((item, key) => {
+              const fields = item.fields
+              return (
+                <div className="list-group-item" key={key}>
+                  {fields['Last Updated'] && (
+                    <small className="float-right text-muted">
+                      <DateField date={fields['Last Updated']} />
+                    </small>
+                  )}
+                  <h5>{fields.Name}</h5>
+                  <div className="mt-2">
                     <small>
-                      <strong className="mr-3 text-uppercase">
-                        Donation Needs:
-                      </strong>
-                      {fields['Donation needs']}
+                      {fields.Address && (
+                        <span className="mr-3">
+                          <i className="fa fa-home mr-2" />
+                          {fields.Address}
+                        </span>
+                      )}
+                      {fields.Phone && (
+                        <span className="mr-3">
+                          <i className="fa fa-phone mr-2" />
+                          {fields.Phone}
+                        </span>
+                      )}
+                      {fields.Email && (
+                        <span className="mr-3">
+                          <i className="fa fa-envelope-o mr-2" />
+                          {fields.Email}
+                        </span>
+                      )}
                     </small>
                   </div>
-                )}
-                {fields['Volunteer needs'] && (
-                  <div className="mt-2 text-muted">
+                  <div className="mt-2">
                     <small>
-                      <strong className="mr-2 text-uppercase">
-                        Volunteer Needs:
-                      </strong>
-                      {fields['Volunteer needs']}
+                      {fields['At capacity'] && (
+                        <span className="mr-3" title="At capacity">
+                          <span className="mr-2">❌</span> At Capacity
+                        </span>
+                      )}
+                      {fields['Elder Care'] && (
+                        <span className="mr-3" title="Has elder care">
+                          <span className="mr-2">👵</span> Elder Care
+                        </span>
+                      )}
+                      {fields['Hablan español'] && (
+                        <span className="mr-3" title="Hablan Español">
+                          <span className="mr-2">🇲🇽</span> Hablan Español
+                        </span>
+                      )}
+                      {fields['Red Cross Facility'] && (
+                        <span className="mr-3" title="Red Cross Facility">
+                          <span className="mr-2">🏥</span> Red Cross Facility
+                        </span>
+                      )}
                     </small>
                   </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-      )
-    }}
-  />,
+                  {fields['Donation needs'] && (
+                    <div className="mt-3 text-muted">
+                      <small>
+                        <strong className="mr-3 text-uppercase">
+                          Donation Needs:
+                        </strong>
+                        {fields['Donation needs']}
+                      </small>
+                    </div>
+                  )}
+                  {fields['Volunteer needs'] && (
+                    <div className="mt-2 text-muted">
+                      <small>
+                        <strong className="mr-2 text-uppercase">
+                          Volunteer Needs:
+                        </strong>
+                        {fields['Volunteer needs']}
+                      </small>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        )
+      }}
+    />
+  </ErrorBoundary>,
   document.getElementById('shelters-table')
 )
 
 ReactDOM.render(
-  <SmartTable
-    url="http://app.sonomafireinfo.com/v2/animals.json"
-    schema={[
-      { name: 'Name' },
-      { name: 'Address' },
-      { name: 'Phone' },
-      { name: 'Last Updated', type: 'date' },
-    ]}
-  />,
+  <ErrorBoundary>
+    <SmartTable
+      url="http://app.sonomafireinfo.com/v2/animals.json"
+      schema={[
+        { name: 'Name' },
+        { name: 'Address' },
+        { name: 'Phone' },
+        { name: 'Last Updated', type: 'date' },
+      ]}
+    />
+  </ErrorBoundary>,
   document.getElementById('animal-shelters-table')
 )
