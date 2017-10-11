@@ -5552,6 +5552,9 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
+.logo {
+  max-width: 100%; }
+
 .section {
   padding: 4.5em 0; }
   @media (max-width: 991px) {
