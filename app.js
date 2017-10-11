@@ -151,7 +151,6 @@ ReactDOM.render(
                   <span className="float-right">
                     {Phone && <PhoneLink number={Phone} />}
                   </span>
-                  {Source ? <a href={Source}>{Name}</a> : Name}
                   <Link url={Source} label={Name} />
                 </li>
               )
