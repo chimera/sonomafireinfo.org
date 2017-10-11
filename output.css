@@ -5562,3 +5562,14 @@ a.text-dark:focus, a.text-dark:hover {
   @media (max-width: 991px) {
     .main-heading {
       font-size: 2.5em; } }
+
+.overlay {
+  background: transparent;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  /* your iframe height */
+  top: 400px;
+  /* your iframe height */
+  margin-top: -400px;
+  /* your iframe height */ }
