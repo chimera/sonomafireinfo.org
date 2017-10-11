@@ -27,9 +27,9 @@ const config = {
   plugins: [
     new ExtractTextPlugin('output.css'),
     new webpack.IgnorePlugin(/\.\/locale$/),
-    // new UglifyJSPlugin(),
+    new UglifyJSPlugin(),
   ],
-  devtool: 'eval',
+  // devtool: 'eval',
 }
 
 module.exports = config
