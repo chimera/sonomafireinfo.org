@@ -10,6 +10,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:Open+Sans:400,700"
     rel="stylesheet">
   <link rel="stylesheet" href="/output.css">
+  <script>
+    window.Promise || document.write(
+      '<script src="//cdn.jsdelivr.net/es6-promise/4.1.0/es6-promise.auto.min.js"><\/script>'
+    )
+  </script>
 </head>
 
 <body>
@@ -256,11 +261,11 @@
   </div>
 
   <script>
-    var script = document.createElement('script');
-    script.src = "/build.js?" + new Date().getTime();
-    script.async = true;
+          var script = document.createElement('script');
+          script.src = "/build.js?" + new Date().getTime();
+          script.async = true;
 
-    document.head.appendChild(script); //or something of the likes
+          document.head.appendChild(script); //or something of the likes
   </script>
 
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
