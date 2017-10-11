@@ -21,61 +21,6 @@ function fetchResources(url) {
   })
 }
 
-class SmartTable extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      error: null,
-      loading: false,
-      items: [],
-    }
-  }
-
-  componentDidCatch(error, info) {
-    // Display fallback UI
-    this.setState({ error: error })
-    // You can also log the error to an error reporting service
-    console.error(error, info)
-  }
-
-  async componentWillMount() {
-    this.setState({ ...this.state, error: null, loading: true })
-    try {
-      const news = await fetchResources(this.props.url)
-      this.setState({
-        ...this.state,
-        // fields: news.fields,
-        items: news.items,
-        error: null,
-        loading: false,
-      })
-    } catch (error) {
-      this.setState({ ...this.state, error: error })
-      console.error('ERROR:', error)
-    }
-  }
-
-  render() {
-    if (this.state.error) {
-      return <Error />
-    }
-
-    if (this.state.loading) {
-      return <Loading />
-    }
-
-    const renderer = this.props.renderer
-    if (renderer) {
-      return renderer({
-        items: this.state.items,
-      })
-    }
-
-    // Default to table renderer
-    return <Table items={this.state.items} schema={this.props.schema} />
-  }
-}
-
 function Error() {
   return (
     <p className="lead text-center text-danger">
@@ -179,6 +124,61 @@ function Check() {
 
 function Cross() {
   return <span>❌</span>
+}
+
+class SmartTable extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      error: null,
+      loading: false,
+      items: [],
+    }
+  }
+
+  componentDidCatch(error, info) {
+    // Display fallback UI
+    this.setState({ error })
+    // You can also log the error to an error reporting service
+    console.error(error, info)
+  }
+
+  async componentWillMount() {
+    this.setState({ ...this.state, error: null, loading: true })
+    try {
+      const news = await fetchResources(this.props.url)
+      this.setState({
+        ...this.state,
+        // fields: news.fields,
+        items: news.items,
+        error: null,
+        loading: false,
+      })
+    } catch (error) {
+      this.setState({ ...this.state, error: error })
+      console.error('ERROR:', error)
+    }
+  }
+
+  render() {
+    if (this.state.error) {
+      return <Error />
+    }
+
+    if (this.state.loading) {
+      return <Loading />
+    }
+
+    const renderer = this.props.renderer
+    if (renderer) {
+      return renderer({
+        items: this.state.items,
+      })
+    }
+
+    // Default to table renderer
+    return <Table items={this.state.items} schema={this.props.schema} />
+  }
 }
 
 ReactDOM.render(
