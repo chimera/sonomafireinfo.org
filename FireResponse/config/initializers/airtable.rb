@@ -2,17 +2,35 @@ Airrecord.api_key = ENV['AIRTABLE_BASE']
 
 AirtableSheets = {
   recent_news: {
-    klass: RecentNews,
+    klass: :RecentNews,
     sort: { "Last Updated" => "desc" },
   },
-  resources: { klass: Resources },
-  support_services: { klass: SupportServices },
-  gas_stations: { klass: GasStations},
-  markets: { klass: Markets },
   shelters: {
-    klass: Shelters,
+    klass: :Shelters,
     sort: { "Name" => "asc" },
   },
-  volunteering: { klass: Volunteering },
-  animals: { klass: Animals },
+  resources: { klass: :Resources },
+  important_info: { klass: :ImportantInfo },
+  support_services: { klass: :SupportServices },
+  donations: { klass: :Donations },
+  gas_stations: { klass: :GasStations},
+  markets: { klass: :Markets },
+  volunteering: { klass: :Volunteering },
+  animals: { klass: :Animals },
+  schools: { klass: :Schools },
+  social_media: { klass: :SocialMedia },
+  pharmacies: { klass: :Pharmacies },
+  evacuations: { klass: :Evacuations },
+  shelter_contacts: { klass: :ShelterContacts },
+  stats: { klass: :Stats },
 }
+
+AirtableSheets.each do |k,v|
+
+  klass = Class.new(Airrecord::Table) do
+    self.base_key = "appsj7gOti4YuE2v1"
+    self.table_name = v[:klass].to_s
+  end
+
+  Object.const_set(v[:klass], klass)
+end
