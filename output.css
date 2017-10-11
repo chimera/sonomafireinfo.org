@@ -5556,12 +5556,22 @@ a.text-dark:focus, a.text-dark:hover {
   padding: 4.5em 0; }
   .section:nth-child(even) {
     background: #f8f9fa; }
+  @media (max-width: 991px) {
+    .section {
+      padding: 2em 0; } }
 
 .main-heading {
-  font-size: 4em; }
+  font-size: 4em;
+  margin-top: 0; }
   @media (max-width: 991px) {
     .main-heading {
-      font-size: 2.5em; } }
+      font-size: 2.2em; } }
+
+.alert-bar .alert-bar-label {
+  font-size: 1.4em; }
+
+.alert-bar .alert-bar-message {
+  font-size: 1.1em; }
 
 .overlay {
   background: transparent;

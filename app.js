@@ -5,14 +5,14 @@ require('./styles.scss')
 const React = require('react')
 const ReactDOM = require('react-dom')
 
-function fetchResources(url) {
+function fetchResources(url, type) {
   return new Promise((resolve, reject) => {
     fetch(url)
       .then(response => {
         return response.json()
       })
       .then(json => {
-        console.log('RESPONSE:', json)
+        console.log(`RESPONSE from ${type}:`, json)
         resolve(json)
       })
       .catch(error => {
@@ -160,10 +160,9 @@ class SmartTable extends React.Component {
   async componentWillMount() {
     this.setState({ ...this.state, error: null, loading: true })
     try {
-      const news = await fetchResources(this.props.url)
+      const news = await fetchResources(this.props.url, this.props.type)
       this.setState({
         ...this.state,
-        // fields: news.fields,
         items: news.items,
         error: null,
         loading: false,
@@ -198,6 +197,7 @@ class SmartTable extends React.Component {
 ReactDOM.render(
   <ErrorBoundary>
     <SmartTable
+      type="Updates"
       url="http://app.sonomafireinfo.com/v2/recent_news.json"
       schema={[
         { name: 'Description', link: 'Source' },
@@ -211,16 +211,7 @@ ReactDOM.render(
 ReactDOM.render(
   <ErrorBoundary>
     <SmartTable
-      url="http://app.sonomafireinfo.com/v2/resources.json"
-      schema={[{ name: 'Name', link: 'Source' }, { name: 'Phone' }]}
-    />
-  </ErrorBoundary>,
-  document.getElementById('resources-table')
-)
-
-ReactDOM.render(
-  <ErrorBoundary>
-    <SmartTable
+      type="Gas Stations"
       url="http://app.sonomafireinfo.com/v2/gas_stations.json"
       schema={[
         { name: 'Name' },
@@ -236,6 +227,7 @@ ReactDOM.render(
 ReactDOM.render(
   <ErrorBoundary>
     <SmartTable
+      type="Markets"
       url="http://app.sonomafireinfo.com/v2/markets.json"
       schema={[
         { name: 'Name' },
@@ -265,6 +257,7 @@ ReactDOM.render(
 ReactDOM.render(
   <ErrorBoundary>
     <SmartTable
+      type="Shelters"
       url="http://app.sonomafireinfo.com/v2/shelters.json"
       renderer={({ items }) => {
         return (
@@ -359,6 +352,7 @@ ReactDOM.render(
 ReactDOM.render(
   <ErrorBoundary>
     <SmartTable
+      type="Animal Shelters"
       url="http://app.sonomafireinfo.com/v2/animals.json"
       schema={[
         { name: 'Name' },
@@ -369,4 +363,15 @@ ReactDOM.render(
     />
   </ErrorBoundary>,
   document.getElementById('animal-shelters-table')
+)
+
+ReactDOM.render(
+  <ErrorBoundary>
+    <SmartTable
+      type="Resources"
+      url="http://app.sonomafireinfo.com/v2/resources.json"
+      schema={[{ name: 'Name', link: 'Source' }, { name: 'Phone' }]}
+    />
+  </ErrorBoundary>,
+  document.getElementById('resources-table')
 )

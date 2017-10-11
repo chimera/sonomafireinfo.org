@@ -19,38 +19,54 @@
 
 <body>
 
-  <div class="py-4 bg-danger text-center text-white">
-    <h3 class="">
-      Signup for live alerts by texting your ZIP code to
+  <div class="alert-bar py-3 bg-danger text-center text-white">
+    <div class="alert-bar-label">
+      Signup for live alerts:
+    </div>
+    <div class="alert-bar-message">
+      Text your ZIP code to
       <a href="tel:888777" class="text-warning">888-777</a>
-    </h3>
+    </div>
   </div>
 
   <div class="section text-center">
     <div class="container">
       <h1 class="main-heading">Sonoma County Fire Info</h1>
-      <p class="lead">Up-to-date information, resources and news regarding the Tubb's, Nunn's and
-        other fires in Sonoma County, California.</p>
-      <nav class="mt-5">
-        <a href="#find-help" class="btn btn-warning mr-3 mb-3">
-          <i class="fa fa-medkit mr-2"></i>
-          Find Help
+      <p class="lead">Up-to-date information, resources and news regarding the fire in Sonoma County,
+        California.
+      </p>
+      <nav class="nav justify-content-center mt-4">
+        <a href="#important-info" class="nav-link">
+          <span class="mr-2">⛑</span>
+          Important Info
         </a>
-        <a href="#resources" class="btn btn-danger mr-3 mb-3" taget="_blank">
-          <i class="fa fa-book mr-2"></i>
+        <a href="#updates" class="nav-link">
+          <span class="mr-2">🗞</span>
+          Updates
+        </a>
+        <a href="#resources" class="nav-link" taget="_blank">
+          <span class="mr-2">📚</span>
           Resources
         </a>
-        <a href="#shelters" class="btn btn-primary mr-3 mb-3" taget="_blank">
-          <i class="fa fa-home mr-2"></i>
-          Shelters
-        </a>
-        <a href="#volunteer" class="btn btn-info mr-3 mb-3">
-          <i class="fa fa-handshake-o mr-2"></i>
+        <a href="#volunteer" class="nav-link">
+          <span class="mr-2">🤝</span>
           Volunteer
         </a>
-        <a href="#donate" class="btn btn-success mb-3">
-          <i class="fa fa-money mr-2"></i>
+        <a href="#donate" class="nav-link">
+          <span class="mr-2">💸</span>
           Donate
+        </a>
+        <a href="#shelters" class="nav-link" taget="_blank">
+          <span class="mr-2">🏠</span>
+          Shelters
+        </a>
+        <a href="#gas-stations" class="nav-link" taget="_blank">
+          <span class="mr-2">⛽️</span>
+          Gas Stations
+        </a>
+        <a href="#markets" class="nav-link" taget="_blank">
+          <span class="mr-2">🥖</span>
+          Markets
         </a>
       </nav>
       <p class="mt-5">
@@ -79,33 +95,12 @@
   <iframe src="https://www.google.com/maps/d/embed?mid=1geX3Dfkc3wx3SY1Eqobmh67uSxE"
     width="100%" height="400px"></iframe>
 
-  <div id="news" class="section">
-    <div class="container-fluid">
-      <!-- <p class="text-danger mb-5 text-center">
-        <strong>Issues with mobile:</strong>
-        <br> We are aware that on some mobile browsers certain data is not being displayed.
-        We are looking into it, sorry for the inconvenience!
-      </p> -->
-      <h3 class="text-center mb-3">
-        <span class="mr-2">️🗞</span>
-        Updates
-      </h3>
-      <p class="lead my-4 text-center">
-        <a href="https://airtable.com/shrS4LGsCBTMULwBk" class="btn btn-primary mr-3 mb-3"
-          target="_blank">
-          <i class="fa fa-envelope-o mr-2"></i>
-          Send us updated info
-        </a>
-      </p>
-      <div id="recent-news-table"></div>
-    </div>
-  </div>
 
-  <div id="find-help" class="section">
+  <div id="important-info" class="section">
     <div class="container">
       <h3 class="text-center mb-5">
         <span class="mr-2">️⛑</span>
-        Find Help
+        Important Info
       </h3>
       <div class="row">
         <div class="col-sm-8 mx-auto">
@@ -128,6 +123,28 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div id="updates" class="section">
+    <div class="container-fluid">
+      <!-- <p class="text-danger mb-5 text-center">
+        <strong>Issues with mobile:</strong>
+        <br> We are aware that on some mobile browsers certain data is not being displayed.
+        We are looking into it, sorry for the inconvenience!
+      </p> -->
+      <h3 class="text-center mb-3">
+        <span class="mr-2">️🗞</span>
+        Updates
+      </h3>
+      <p class="lead my-4 text-center">
+        <a href="https://airtable.com/shrS4LGsCBTMULwBk" class="btn btn-primary mr-3 mb-3"
+          target="_blank">
+          <i class="fa fa-envelope-o mr-2"></i>
+          Send us updated info
+        </a>
+      </p>
+      <div id="recent-news-table"></div>
     </div>
   </div>
 
