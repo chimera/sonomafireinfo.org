@@ -240,7 +240,13 @@
     </div>
   </div>
 
-  <script async src="/build.js"></script>
+  <script>
+   var script = document.createElement('script');
+   script.src = "/build.js?" + new Date().getTime();
+   script.async = true;
+
+   document.head.appendChild(script); //or something of the likes
+  </script>
 
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-599674-49"></script>
