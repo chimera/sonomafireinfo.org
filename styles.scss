@@ -24,6 +24,16 @@ $h2-font-size: 2.6rem;
   }
 }
 
+h5 {
+  font-size: 1.2em;
+
+  @include media-breakpoint-down(md) {
+    & {
+      font-size: 1em;
+    }
+  }
+}
+
 .main-heading {
   font-size: 4em;
   margin-top: 0;

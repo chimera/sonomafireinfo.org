@@ -4,6 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
   <title>Sonoma County Fire Information - Fire News, Resources and Contacts for Fire Victims</title>
   <meta name="description" content="News, resources, contacts, list of open gas stations and markets and much more for the Tubb's and Nunn's fires in Santa Rosa, Rohnert Park, Cotati, Sebastopol, Kenwood and other areas. A central location for Sonoma County fire information.">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,9 +38,6 @@
   <div class="section text-center">
     <div class="container">
       <h1 class="main-heading">Sonoma County Fire Info</h1>
-      <p class="lead">Up-to-date information, resources and news regarding the fire in Sonoma County,
-        California.
-      </p>
       <nav class="nav justify-content-center mt-4">
         <a href="#important-info" class="nav-link">
           <span class="mr-2">⛑</span>
@@ -43,10 +46,6 @@
         <a href="#updates" class="nav-link">
           <span class="mr-2">🗞</span>
           Updates
-        </a>
-        <a href="#resources" class="nav-link" taget="_blank">
-          <span class="mr-2">📚</span>
-          Resources
         </a>
         <a href="#volunteer" class="nav-link">
           <span class="mr-2">🤝</span>
@@ -60,6 +59,10 @@
           <span class="mr-2">🏠</span>
           Shelters
         </a>
+        <a href="#animal-shelters" class="nav-link" taget="_blank">
+          <span class="mr-2">🐶</span>
+          Animal Shelters
+        </a>
         <a href="#gas-stations" class="nav-link" taget="_blank">
           <span class="mr-2">⛽️</span>
           Gas Stations
@@ -67,6 +70,10 @@
         <a href="#markets" class="nav-link" taget="_blank">
           <span class="mr-2">🥖</span>
           Markets
+        </a>
+        <a href="#resources" class="nav-link" taget="_blank">
+          <span class="mr-2">📚</span>
+          Resources
         </a>
       </nav>
       <p class="mt-5">
@@ -104,22 +111,7 @@
       </h3>
       <div class="row">
         <div class="col-sm-8 mx-auto">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <i class="fa fa-phone mr-3"></i>
-              Sonoma County Emergency Operations Hotline:
-              <a href="tel:17075653856">(707) 565-3856</a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-bullhorn mr-3"></i>
-              <a href="https://safeandwell.communityos.org/zf/safe/add" target="_blank">List yourself as safe and well</a>
-              through the Red Cross
-            </li>
-            <!-- <li class="list-group-item">
-              <i class="fa fa-home mr-3"></i>
-              <a href="https://drive.google.com/open?id=1fWtzxnQYhPEICJ6AjQdYKI_Tnqc&usp=sharing"
-                target="_blank">Current list of shelters</a>
-            </li> -->
+          <div id="important-info-table"></div>
           </ul>
         </div>
       </div>
@@ -127,7 +119,7 @@
   </div>
 
   <div id="updates" class="section">
-    <div class="container-fluid">
+    <div class="container">
       <!-- <p class="text-danger mb-5 text-center">
         <strong>Issues with mobile:</strong>
         <br> We are aware that on some mobile browsers certain data is not being displayed.
@@ -148,75 +140,29 @@
     </div>
   </div>
 
-  <div id="resources" class="section">
-    <div class="container-fluid">
-      <h3 class="mb-3 text-center">
-        <span class="mr-2">️📚</span>
-        Resources
-      </h3>
-      <p class="lead mb-5 text-center">A list of general resources.</p>
-      <div id="resources-table"></div>
-    </div>
-  </div>
-
-  <div id="shelters" class="section">
-    <div class="container-fluid">
-      <h3 class="mb-3 text-center">
-        <span class="mr-2">️🏠</span>
-        Shelters
+  <div id="volunteer" class="section">
+    <div class="container">
+      <h3 class="text-center mb-5">
+        <span class="mr-2">🤝</span>
+        Volunteer
       </h3>
       <div class="row">
-        <div class="col-lg-6 col-md-9 mx-auto">
-          <p class="lead mb-5 text-center">A list of shelters known to be open.</p>
-          <div id="shelters-table"></div>
+        <div class="col-sm-8 mx-auto">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <i class="fa fa-handshake-o mr-3"></i>
+              <a href="http://refb.org/volunteer-now/" target="_blank">Redwood Empire Food Bank</a>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-handshake-o mr-3"></i>
+              <a href="http://www.redcross.org/volunteer/volunteer-opportunities/disaster-volunteer"
+                target="_blank">Red Cross Volunteer form</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-
-  <div id="animal-shelters" class="section">
-    <div class="container-fluid">
-      <h3 class="mb-3 text-center">
-        <span class="mr-2">️🐶</span>
-        Animal Shelters
-      </h3>
-      <p class="lead mb-5 text-center">A list of shelters known to be open and accepting animals.</p>
-      <div id="animal-shelters-table"></div>
-    </div>
-  </div>
-
-  <div id="gas-stations" class="section">
-    <div class="container-fluid">
-      <h3 class="mb-3 text-center">
-        <span class="mr-2">⛽️</span>
-        Gas Stations
-      </h3>
-      <p class="lead mb-5 text-center">A list of gas stations known to be open.</p>
-      <div id="gas-stations-table"></div>
-    </div>
-  </div>
-
-  <div id="markets" class="section">
-    <div class="container-fluid">
-      <h3 class="mb-3 text-center">
-        <span class="mr-2">🥖</span>
-        Markets
-      </h3>
-      <p class="lead mb-5 text-center">A list of markets known to be open.</p>
-      <div id="markets-table"></div>
-    </div>
-  </div>
-
-  <!-- <div id="pharmacies" class="section">
-    <div class="container-fluid">
-      <h3 class="mb-3 text-center">
-        <span class="mr-2">💊</span>
-        Pharmacies
-      </h3>
-      <p class="lead mb-5 text-center">A list of pharmacies known to be open.</p>
-      <div id="pharmacies-table"></div>
-    </div>
-  </div> -->
 
   <div id="donate" class="section">
     <div class="container">
@@ -255,26 +201,86 @@
     </div>
   </div>
 
-
-  <div id="volunteer" class="section">
-    <div class="container">
-      <h3 class="text-center mb-5">
-        <span class="mr-2">🤝</span>
-        Volunteer
+  <div id="shelters" class="section">
+    <div class="container-fluid">
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">️🏠</span>
+        Shelters
       </h3>
       <div class="row">
-        <div class="col-sm-8 mx-auto">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <i class="fa fa-handshake-o mr-3"></i>
-              <a href="http://refb.org/volunteer-now/" target="_blank">Redwood Empire Food Bank</a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-handshake-o mr-3"></i>
-              <a href="http://www.redcross.org/volunteer/volunteer-opportunities/disaster-volunteer"
-                target="_blank">Red Cross Volunteer form</a>
-            </li>
-          </ul>
+        <div class="col-lg-6 col-md-9 mx-auto">
+          <p class="lead mb-5 text-center">A list of shelters known to be open.</p>
+          <div id="shelters-table"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="animal-shelters" class="section">
+    <div class="container-fluid">
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">️🐶</span>
+        Animal Shelters
+      </h3>
+      <p class="lead mb-5 text-center">A list of shelters known to be open and accepting animals.</p>
+      <div class="row">
+        <div class="col-lg-6 col-md-9 mx-auto">
+          <div id="animal-shelters-table"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="gas-stations" class="section">
+    <div class="container-fluid">
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">⛽️</span>
+        Gas Stations
+      </h3>
+      <p class="lead mb-5 text-center">A list of gas stations known to be open.</p>
+      <div class="row">
+        <div class="col-lg-6 col-md-9 mx-auto">
+          <div id="gas-stations-table"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="markets" class="section">
+    <div class="container-fluid">
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">🥖</span>
+        Markets
+      </h3>
+      <p class="lead mb-5 text-center">A list of markets known to be open.</p>
+      <div class="row">
+        <div class="col-lg-6 col-md-9 mx-auto">
+          <div id="markets-table"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="pharmacies" class="section">
+    <div class="container-fluid">
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">💊</span>
+        Pharmacies
+      </h3>
+      <p class="lead mb-5 text-center">A list of pharmacies known to be open.</p>
+      <div id="pharmacies-table"></div>
+    </div>
+  </div> -->
+  <div id="resources" class="section">
+    <div class="container-fluid">
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">️📚</span>
+        Resources
+      </h3>
+      <p class="lead mb-5 text-center">A list of general resources.</p>
+      <div class="row">
+        <div class="col-lg-6 col-md-9 mx-auto">
+          <div id="resources-table"></div>
         </div>
       </div>
     </div>

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/chimera/tubbsfireinfo.com#readme",
   "dependencies": {
+    "awesome-phonenumber": "2.1.1",
     "babel-preset-react": "6.24.1",
     "bootstrap": "4.0.0-beta",
     "react": "16.0.0",

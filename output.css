@@ -5560,6 +5560,12 @@ a.text-dark:focus, a.text-dark:hover {
     .section {
       padding: 2em 0; } }
 
+h5 {
+  font-size: 1.2em; }
+  @media (max-width: 991px) {
+    h5 {
+      font-size: 1em; } }
+
 .main-heading {
   font-size: 4em;
   margin-top: 0; }
