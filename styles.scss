@@ -13,10 +13,6 @@ $h2-font-size: 2.6rem;
 .section {
   padding: 4.5em 0;
 
-  &:nth-child(even) {
-    background: $gray-100;
-  }
-
   @include media-breakpoint-down(md) {
     & {
       padding: 2em 0;
@@ -55,7 +51,7 @@ h5 {
 }
 
 // Map overlay fix
-$iframe-height: 400px;
+$iframe-height: 500px;
 .overlay {
   background: transparent;
   position: relative;
