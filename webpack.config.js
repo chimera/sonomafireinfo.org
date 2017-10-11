@@ -29,7 +29,7 @@ const config = {
     new webpack.IgnorePlugin(/\.\/locale$/),
     new UglifyJSPlugin(),
   ],
-  // devtool: 'eval',
+  devtool: 'eval',
 }
 
 module.exports = config

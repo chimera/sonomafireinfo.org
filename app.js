@@ -193,6 +193,38 @@ ReactDOM.render(
   document.getElementById('recent-news-table')
 )
 
+// Services
+ReactDOM.render(
+  <ErrorBoundary>
+    <SmartTable
+      type="Services"
+      url="http://app.sonomafireinfo.com/v2/support_services.json"
+      renderer={({ items }) => {
+        return (
+          <div className="list-group">
+            {items.map((item, key) => {
+              const fields = item.fields
+              return (
+                <div className="list-group-item" key={key}>
+                  {fields['Last Updated'] && (
+                    <small className="float-right text-muted">
+                      <LastUpdated date={fields['Last Updated']} />
+                    </small>
+                  )}
+                  <h5>{fields.Name}</h5>
+                  <ContactLinks fields={fields} />
+                  <div className="text-muted mt-3">{fields.Notes}</div>
+                </div>
+              )
+            })}
+          </div>
+        )
+      }}
+    />
+  </ErrorBoundary>,
+  document.getElementById('services-table')
+)
+
 // Shelters
 ReactDOM.render(
   <ErrorBoundary>
