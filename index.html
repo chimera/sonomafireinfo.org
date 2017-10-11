@@ -1,8 +1,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sonoma County Fire Information - Fire News, Resources and Contacts for Fire Victims</title>
   <meta name="description" content="News, resources, contacts, list of open gas stations and markets and much more for the Tubb's and Nunn's fires in Santa Rosa, Rohnert Park, Cotati, Sebastopol, Kenwood and other areas. A central location for Sonoma County fire information.">
@@ -10,6 +10,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:Open+Sans:400,700"
     rel="stylesheet">
   <link rel="stylesheet" href="/output.css">
+  <script>
+    window.Promise || document.write(
+      '<script src="//cdn.jsdelivr.net/es6-promise/4.1.0/es6-promise.auto.min.js"><\/script>'
+    )
+  </script>
 </head>
 
 <body>
@@ -27,27 +32,36 @@
       <p class="lead">Up-to-date information, resources and news regarding the Tubb's, Nunn's and
         other fires in Sonoma County, California.</p>
       <nav class="mt-5">
-        <a href="#find-help" class="btn btn-lg btn-warning mr-3 mb-3">
+        <a href="#find-help" class="btn btn-warning mr-3 mb-3">
           <i class="fa fa-medkit mr-2"></i>
           Find Help
         </a>
-        <a href="#resources" class="btn btn-danger btn-lg mr-3 mb-3" taget="_blank">
+        <a href="#resources" class="btn btn-danger mr-3 mb-3" taget="_blank">
           <i class="fa fa-book mr-2"></i>
           Resources
         </a>
-        <a href="#shelters" class="btn btn-primary btn-lg mr-3 mb-3" taget="_blank">
+        <a href="#shelters" class="btn btn-primary mr-3 mb-3" taget="_blank">
           <i class="fa fa-home mr-2"></i>
           Shelters
         </a>
-        <a href="#volunteer" class="btn btn-lg btn-info mr-3 mb-3">
+        <a href="#volunteer" class="btn btn-info mr-3 mb-3">
           <i class="fa fa-handshake-o mr-2"></i>
           Volunteer
         </a>
-        <a href="#donate" class="btn btn-lg btn-success mb-3">
+        <a href="#donate" class="btn btn-success mb-3">
           <i class="fa fa-money mr-2"></i>
           Donate
         </a>
       </nav>
+      <p class="mt-5">
+        <small class="text-muted">Follow us on Twitter for live updates:</small>
+      </p>
+      <p class="mt-2">
+        <a href="https://twitter.com/sonomafireinfo" class="btn btn-success mb-3" target="_blank">
+          <i class="fa fa-twitter mr-2"></i>
+          @sonomafireinfo on Twitter
+        </a>
+      </p>
       <p class="mt-5">
         Translate this website:
         <div id="google_translate_element"></div>
@@ -61,28 +75,38 @@
     </div>
   </div>
 
-  <iframe src="https://www.google.com/maps/d/embed?mid=1geX3Dfkc3wx3SY1Eqobmh67uSxE" width="100%" height="400px"></iframe>
+  <div class="overlay" onClick="style.pointerEvents='none'"></div>
+  <iframe src="https://www.google.com/maps/d/embed?mid=1geX3Dfkc3wx3SY1Eqobmh67uSxE"
+    width="100%" height="400px"></iframe>
 
   <div id="news" class="section">
     <div class="container-fluid">
-      <h2 class="text-center mb-3">Updates</h2>
+      <!-- <p class="text-danger mb-5 text-center">
+        <strong>Issues with mobile:</strong>
+        <br> We are aware that on some mobile browsers certain data is not being displayed.
+        We are looking into it, sorry for the inconvenience!
+      </p> -->
+      <h3 class="text-center mb-3">
+        <span class="mr-2">️🗞</span>
+        Updates
+      </h3>
       <p class="lead my-4 text-center">
-        <a href="https://airtable.com/shrS4LGsCBTMULwBk" class="btn btn-primary mr-3" target="_blank">
+        <a href="https://airtable.com/shrS4LGsCBTMULwBk" class="btn btn-primary mr-3 mb-3"
+          target="_blank">
           <i class="fa fa-envelope-o mr-2"></i>
-          Send in new leads
-        </a>
-        <a href="https://twitter.com/sonomafireinfo" class="btn btn-success" target="_blank">
-          <i class="fa fa-twitter mr-2"></i>
-          @sonomafireinfo on Twitter
+          Send us updated info
         </a>
       </p>
-      <div id="resource-table"></div>
+      <div id="recent-news-table"></div>
     </div>
   </div>
 
   <div id="find-help" class="section">
     <div class="container">
-      <h2 class="text-center mb-5">Find Help</h2>
+      <h3 class="text-center mb-5">
+        <span class="mr-2">️⛑</span>
+        Find Help
+      </h3>
       <div class="row">
         <div class="col-sm-8 mx-auto">
           <ul class="list-group">
@@ -108,47 +132,37 @@
   </div>
 
   <div id="resources" class="section">
-    <div class="container">
-      <h2 class="text-center mb-5">Resources</h2>
-      <div class="row">
-        <div class="col-sm-8 mx-auto">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <i class="fa fa-book mr-3"></i>
-              <a href="http://bit.ly/sonoma-fire-info" taget="_blank">
-                Fire resources document
-              </a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-car mr-3"></i>
-              <a href="https://www.google.com/maps/@38.3940283,-122.4986774,11.25z/data=!5m1!1e1"
-                taget="_blank">
-                Road closures map
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="container-fluid">
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">️📚</span>
+        Resources
+      </h3>
+      <p class="lead mb-5 text-center">A list of general resources.</p>
+      <div id="resources-table"></div>
     </div>
   </div>
 
   <div id="shelters" class="section">
     <div class="container-fluid">
-      <h2 class="mb-3 text-center">
-        <i class="fa fa-home mr-3"></i>
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">️🏠</span>
         Shelters
-      </h2>
-      <p class="lead mb-5 text-center">A list of shelters known to be open.</p>
-      <div id="shelters-table"></div>
+      </h3>
+      <div class="row">
+        <div class="col-lg-6 col-md-9 mx-auto">
+          <p class="lead mb-5 text-center">A list of shelters known to be open.</p>
+          <div id="shelters-table"></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div id="animal-shelters" class="section">
     <div class="container-fluid">
-      <h2 class="mb-3 text-center">
-        <i class="fa fa-paw mr-3"></i>
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">️🐶</span>
         Animal Shelters
-      </h2>
+      </h3>
       <p class="lead mb-5 text-center">A list of shelters known to be open and accepting animals.</p>
       <div id="animal-shelters-table"></div>
     </div>
@@ -156,10 +170,10 @@
 
   <div id="gas-stations" class="section">
     <div class="container-fluid">
-      <h2 class="mb-3 text-center">
-        <i class="fa fa-car mr-3"></i>
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">⛽️</span>
         Gas Stations
-      </h2>
+      </h3>
       <p class="lead mb-5 text-center">A list of gas stations known to be open.</p>
       <div id="gas-stations-table"></div>
     </div>
@@ -167,21 +181,41 @@
 
   <div id="markets" class="section">
     <div class="container-fluid">
-      <h2 class="mb-3 text-center">
-        <i class="fa fa-cutlery mr-3"></i>
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">🥖</span>
         Markets
-      </h2>
+      </h3>
       <p class="lead mb-5 text-center">A list of markets known to be open.</p>
       <div id="markets-table"></div>
     </div>
   </div>
 
-  <div id="donate" class="section bg-light">
+  <!-- <div id="pharmacies" class="section">
+    <div class="container-fluid">
+      <h3 class="mb-3 text-center">
+        <span class="mr-2">💊</span>
+        Pharmacies
+      </h3>
+      <p class="lead mb-5 text-center">A list of pharmacies known to be open.</p>
+      <div id="pharmacies-table"></div>
+    </div>
+  </div> -->
+
+  <div id="donate" class="section">
     <div class="container">
-      <h2 class="text-center mb-5">Donate</h2>
+      <h3 class="text-center mb-5">
+        <span class="mr-2">💸</span>
+        Donate
+      </h3>
       <div class="row">
         <div class="col-sm-8 mx-auto">
           <ul class="list-group">
+            <li class="list-group-item">
+              <i class="fa fa-money mr-3"></i>
+              <a href="https://www.redwoodcu.org/northbayfirerelief" target="_blank" target="_blank">
+                North Bay Fire Relief by Redwood Credit Union
+              </a>
+            </li>
             <li class="list-group-item">
               <i class="fa fa-book mr-3"></i>
               <a href="http://www.nbcbayarea.com/news/local/How-To-Help-North-Bay-Fire-Relief-Efforts-450142573.html"
@@ -192,10 +226,6 @@
             <li class="list-group-item">
               <i class="fa fa-money mr-3"></i>
               <a href="https://www.gofundme.com/napa-sonoma-fires" target="_blank">GoFundMe campaign raising funds for victims</a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-money mr-3"></i>
-              <a href="http://bit.ly/tubbs-fire-relief" target="_blank">Donate to the Sonoma County Fire Relief Fund</a>
             </li>
             <li class="list-group-item">
               <i class="fa fa-money mr-3"></i>
@@ -211,10 +241,17 @@
 
   <div id="volunteer" class="section">
     <div class="container">
-      <h2 class="text-center mb-5">Volunteer</h2>
+      <h3 class="text-center mb-5">
+        <span class="mr-2">🤝</span>
+        Volunteer
+      </h3>
       <div class="row">
         <div class="col-sm-8 mx-auto">
           <ul class="list-group">
+            <li class="list-group-item">
+              <i class="fa fa-handshake-o mr-3"></i>
+              <a href="http://refb.org/volunteer-now/" target="_blank">Redwood Empire Food Bank</a>
+            </li>
             <li class="list-group-item">
               <i class="fa fa-handshake-o mr-3"></i>
               <a href="http://www.redcross.org/volunteer/volunteer-opportunities/disaster-volunteer"
@@ -234,28 +271,28 @@
       </p>
       <p>
         <small>
-          <a href="https://github.com/chimera/tubbsfireinfo.com" target="_blank">View code for website here</a>
+          <a href="https://github.com/chimera/sonomafireinfo.com" target="_blank">View code for website here</a>
         </small>
       </p>
     </div>
   </div>
 
   <script>
-   var script = document.createElement('script');
-   script.src = "/build.js?" + new Date().getTime();
-   script.async = true;
+          var script = document.createElement('script');
+          script.src = "/build.js?" + new Date().getTime();
+          script.async = true;
 
-   document.head.appendChild(script); //or something of the likes
+          document.head.appendChild(script); //or something of the likes
   </script>
 
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-599674-49"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
 
-    gtag('config', 'UA-599674-49');
+          gtag('config', 'UA-599674-49');
   </script>
 
 
