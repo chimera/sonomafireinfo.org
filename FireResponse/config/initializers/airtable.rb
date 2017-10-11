@@ -9,20 +9,62 @@ AirtableSheets = {
     klass: :Shelters,
     sort: { "Name" => "asc" },
   },
-  resources: { klass: :Resources },
-  important_info: { klass: :ImportantInfo },
-  support_services: { klass: :SupportServices },
-  donations: { klass: :Donations },
-  gas_stations: { klass: :GasStations},
-  markets: { klass: :Markets },
-  volunteering: { klass: :Volunteering },
-  animals: { klass: :Animals },
-  schools: { klass: :Schools },
-  social_media: { klass: :SocialMedia },
-  pharmacies: { klass: :Pharmacies },
-  evacuations: { klass: :Evacuations },
-  shelter_contacts: { klass: :ShelterContacts },
-  stats: { klass: :Stats },
+  resources: {
+    klass: :Resources,
+    sort: { "Name" => "asc" },
+  },
+  important_info: {
+    klass: :ImportantInfo,
+    sort: { "Name" => "asc" },
+  },
+  support_services: {
+    klass: :SupportServices,
+    sort: { "Name" => "asc" },
+  },
+  donations: {
+    klass: :Donations,
+    sort: { "Name" => "asc" },
+  },
+  gas_stations: {
+    klass: :GasStations,
+    sort: { "Name" => "asc" },
+  },
+  markets: {
+    klass: :Markets,
+    sort: { "Name" => "asc" },
+  },
+  volunteering: {
+    klass: :Volunteering,
+    sort: { "Name" => "asc" },
+  },
+  animals: {
+    klass: :Animals,
+    sort: { "Name" => "asc" },
+  },
+  schools: {
+    klass: :Schools,
+    sort: { "Name" => "asc" },
+  },
+  social_media: {
+    klass: :SocialMedia,
+    sort: { "Name" => "asc" },
+  },
+  pharmacies: {
+    klass: :Pharmacies,
+    sort: { "Name" => "asc" },
+  },
+  evacuations: {
+    klass: :Evacuations,
+    sort: { "Name" => "asc" },
+  },
+  shelter_contacts: {
+    klass: :ShelterContacts,
+    sort: { "Name" => "asc" },
+  },
+  stats: {
+    klass: :Stats,
+    sort: { "Name" => "asc" },
+  },
 }
 
 AirtableSheets.each do |k,v|
