@@ -210,12 +210,14 @@ ReactDOM.render(
                     <Link url={Source} label={Name} />
                   </h5>
                   <ContactLinks fields={item.fields} />
-                  <div className="mt-2 text-muted">
-                    <small>
-                      <strong className="mr-2">NEEDS:</strong>
-                      {Needs}
-                    </small>
-                  </div>
+                  {Needs && (
+                    <div className="mt-2 text-muted">
+                      <small>
+                        <strong className="mr-2">NEEDS:</strong>
+                        {Needs}
+                      </small>
+                    </div>
+                  )}
                 </li>
               )
             })}
@@ -244,12 +246,14 @@ ReactDOM.render(
                     <Link url={Source} label={Name} />
                   </h5>
                   <ContactLinks fields={item.fields} />
-                  <div className="mt-2 text-muted">
-                    <small>
-                      <strong className="mr-2">NEEDS:</strong>
-                      {Needs}
-                    </small>
-                  </div>
+                  {Needs && (
+                    <div className="mt-2 text-muted">
+                      <small>
+                        <strong className="mr-2">NEEDS:</strong>
+                        {Needs}
+                      </small>
+                    </div>
+                  )}
                 </li>
               )
             })}
