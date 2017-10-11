@@ -207,11 +207,20 @@ ReactDOM.render(
               return (
                 <div className="list-group-item" key={key}>
                   {fields['Last Updated'] && (
-                    <small className="float-right text-muted">
+                    <span className="float-right">
                       <LastUpdated date={fields['Last Updated']} />
-                    </small>
+                    </span>
                   )}
-                  <h5>{fields.Name}</h5>
+                  <h5>
+                    {fields.Closed ? (
+                      <small>
+                        <del>{fields.Name}</del>{' '}
+                        <span className="ml-3">⚠️ CLOSED</span>
+                      </small>
+                    ) : (
+                      fields.Name
+                    )}
+                  </h5>
                   <ContactLinks fields={fields} />
                   <ShelterProperties fields={fields} />
                   {fields['Donation needs'] && (
