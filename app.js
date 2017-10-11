@@ -111,11 +111,11 @@ function Cell({ column, link, value }) {
 
 function DateField({ date }) {
   date = new Date(date)
+  // Pad minutes with leading zero if necessary.
+  const minutes = ('0' + date.getMinutes()).slice(-2)
   return (
-    <time title={date.toString()}>
-      {`${date.getMonth() +
-        1}/${date.getDate()} at ${date.getHours()}:${date.getMinutes()}`}
-    </time>
+    <time title={date.toString()}>{`${date.getMonth() +
+      1}/${date.getDate()} at ${date.getHours()}:${minutes}`}</time>
   )
 }
 
