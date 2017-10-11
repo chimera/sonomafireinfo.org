@@ -13,7 +13,7 @@ class TablesController < ApplicationController
     end
 
     define_method("#{k}_v2") do
-      records = ::Rails.cache.fetch("cache/#{k}/records", expires_in: 30.seconds) do
+      records = ::Rails.cache.fetch("cache/#{k}/records_v2", expires_in: 30.seconds) do
         sort = v[:sort] rescue {}
         recs = v[:klass].all(sort: sort)
 
