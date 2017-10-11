@@ -31,6 +31,13 @@ class SmartTable extends React.Component {
     }
   }
 
+  componentDidCatch(error, info) {
+    // Display fallback UI
+    this.setState({ error: error })
+    // You can also log the error to an error reporting service
+    console.error(error, info)
+  }
+
   async componentWillMount() {
     this.setState({ ...this.state, error: null, loading: true })
     try {
