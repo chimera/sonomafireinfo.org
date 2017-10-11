@@ -47,7 +47,7 @@ class SmartTable extends React.Component {
       const news = await fetchResources(this.props.url, this.props.type)
       this.setState({
         ...this.state,
-        items: news.items,
+        items: news.items.filter(item => Object.keys(item).length),
         error: null,
         loading: false,
       })
@@ -377,6 +377,37 @@ ReactDOM.render(
     />
   </ErrorBoundary>,
   document.getElementById('markets-table')
+)
+
+// Pharmacies
+ReactDOM.render(
+  <ErrorBoundary>
+    <SmartTable
+      type="Pharmacies"
+      url="http://app.sonomafireinfo.com/v2/pharmacies.json"
+      renderer={({ items }) => {
+        return (
+          <div className="list-group">
+            {items.map((item, key) => {
+              const fields = item.fields
+              return (
+                <div className="list-group-item" key={key}>
+                  {fields['Last Updated'] && (
+                    <small className="float-right text-muted">
+                      <LastUpdated date={fields['Last Updated']} />
+                    </small>
+                  )}
+                  <h5>{fields.Name}</h5>
+                  <ContactLinks fields={fields} />
+                </div>
+              )
+            })}
+          </div>
+        )
+      }}
+    />
+  </ErrorBoundary>,
+  document.getElementById('pharmacies-table')
 )
 
 // Resources
