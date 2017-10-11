@@ -152,3 +152,8 @@ ReactDOM.render(
   <SmartTable url="http://app.sonomafireinfo.com/shelters.json" />,
   document.getElementById('shelters-table')
 )
+
+ReactDOM.render(
+  <SmartTable url="http://app.sonomafireinfo.com/animals.json" />,
+  document.getElementById('animal-shelters-table')
+)

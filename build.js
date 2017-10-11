@@ -10079,6 +10079,8 @@ ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.sonomafireinf
 
 ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.sonomafireinfo.com/shelters.json' }), document.getElementById('shelters-table'));
 
+ReactDOM.render(React.createElement(SmartTable, { url: 'http://app.sonomafireinfo.com/animals.json' }), document.getElementById('animal-shelters-table'));
+
 /***/ }),
 /* 343 */
 /***/ (function(module, exports) {
