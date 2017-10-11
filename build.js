@@ -9937,6 +9937,7 @@ class SmartTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      fields: [],
       error: null,
       loading: false,
       items: []
@@ -9950,7 +9951,7 @@ class SmartTable extends React.Component {
       _this.setState(_extends({}, _this.state, { error: null, loading: true }));
       try {
         const news = yield fetchResources(_this.props.url);
-        _this.setState(_extends({}, _this.state, { items: news, error: null, loading: false }));
+        _this.setState(_extends({}, _this.state, { fields: news.fields, items: news.items, error: null, loading: false }));
       } catch (error) {
         _this.setState(_extends({}, _this.state, { error: error }));
         console.error('ERROR:', error);
@@ -9960,6 +9961,7 @@ class SmartTable extends React.Component {
 
   render() {
     return React.createElement(Table, {
+      fields: this.state.fields,
       error: this.state.error,
       items: this.state.items,
       loading: this.state.loading
@@ -9967,7 +9969,7 @@ class SmartTable extends React.Component {
   }
 }
 
-function Table({ error, loading, items }) {
+function Table({ error, loading, fields, items }) {
   if (error) {
     return React.createElement(
       'p',
@@ -9986,7 +9988,7 @@ function Table({ error, loading, items }) {
     );
   }
 
-  const columns = Object.values(items[0].column_mappings);
+  const columns = Object.values(fields);
   return React.createElement(
     'table',
     { className: 'table table-hover table-responsive' },
