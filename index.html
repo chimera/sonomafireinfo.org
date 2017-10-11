@@ -126,7 +126,7 @@
   </div>
 
   <div id="updates" class="section">
-    <div class="container">
+    <div class="container-fluid">
       <!-- <p class="text-danger mb-5 text-center">
         <strong>Issues with mobile:</strong>
         <br> We are aware that on some mobile browsers certain data is not being displayed.
@@ -142,7 +142,11 @@
           Send us updated info
         </a>
       </p>
-      <div id="recent-news-table"></div>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div id="recent-news-table"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -153,18 +157,9 @@
         Volunteer
       </h3>
       <div class="row">
-        <div class="col-sm-8 mx-auto">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <i class="fa fa-handshake-o mr-3"></i>
-              <a href="http://refb.org/volunteer-now/" target="_blank">Redwood Empire Food Bank</a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-handshake-o mr-3"></i>
-              <a href="http://www.redcross.org/volunteer/volunteer-opportunities/disaster-volunteer"
-                target="_blank">Red Cross Volunteer form</a>
-            </li>
-          </ul>
+        <div class="col-md-6 mx-auto">
+          <p class="lead mb-5 text-center">A list of volunteering opportunities.</p>
+          <div id="volunteer-table"></div>
         </div>
       </div>
     </div>
@@ -177,31 +172,9 @@
         Donate
       </h3>
       <div class="row">
-        <div class="col-sm-8 mx-auto">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <i class="fa fa-money mr-3"></i>
-              <a href="https://www.redwoodcu.org/northbayfirerelief" target="_blank" target="_blank">
-                North Bay Fire Relief by Redwood Credit Union
-              </a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-book mr-3"></i>
-              <a href="http://www.nbcbayarea.com/news/local/How-To-Help-North-Bay-Fire-Relief-Efforts-450142573.html"
-                target="_blank" target="_blank">
-                List of organizations accepting donations
-              </a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-money mr-3"></i>
-              <a href="https://www.gofundme.com/napa-sonoma-fires" target="_blank">GoFundMe campaign raising funds for victims</a>
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-money mr-3"></i>
-              <a href="https://www.youcaring.com/tubbsfirevictimssantarosacommunity-976726" target="_blank">Donate to the Santa Rosa Victims</a> (operated by the
-              <a href="https://twitter.com/Santa_Rosa_PD/status/917878558827188227" target="_blank">City of Santa Rosa</a>)
-            </li>
-          </ul>
+        <div class="col-md-6 mx-auto">
+          <p class="lead mb-5 text-center">A list of donation opportunities.</p>
+          <div id="donate-table"></div>
         </div>
       </div>
     </div>
@@ -214,7 +187,7 @@
         Services
       </h3>
       <div class="row">
-        <div class="col-lg-6 col-md-9 mx-auto">
+        <div class="col-md-6 mx-auto">
           <p class="lead mb-5 text-center">A list of available services.</p>
           <div id="services-table"></div>
         </div>
@@ -229,7 +202,7 @@
         Shelters
       </h3>
       <div class="row">
-        <div class="col-lg-6 col-md-9 mx-auto">
+        <div class="col-md-6 mx-auto">
           <p class="lead mb-5 text-center">A list of shelters known to be open.</p>
           <div id="shelters-table"></div>
         </div>
@@ -251,7 +224,7 @@
         </a>
       </p>
       <div class="row">
-        <div class="col-lg-6 col-md-9 mx-auto">
+        <div class="col-md-6 mx-auto">
           <div id="animal-shelters-table"></div>
         </div>
       </div>
@@ -266,7 +239,7 @@
       </h3>
       <p class="lead mb-5 text-center">A list of gas stations known to be open.</p>
       <div class="row">
-        <div class="col-lg-6 col-md-9 mx-auto">
+        <div class="col-md-6 mx-auto">
           <div id="gas-stations-table"></div>
         </div>
       </div>
@@ -281,7 +254,7 @@
       </h3>
       <p class="lead mb-5 text-center">A list of markets known to be open.</p>
       <div class="row">
-        <div class="col-lg-6 col-md-9 mx-auto">
+        <div class="col-md-6 mx-auto">
           <div id="markets-table"></div>
         </div>
       </div>
@@ -296,7 +269,7 @@
       </h3>
       <p class="lead mb-5 text-center">A list of pharmacies known to be open.</p>
       <div class="row">
-        <div class="col-lg-6 col-md-9 mx-auto">
+        <div class="col-md-6 mx-auto">
           <div id="pharmacies-table"></div>
         </div>
       </div>
@@ -317,7 +290,6 @@
       </div>
     </div>
   </div>
-
 
   <div class="section" id="contact">
     <div class="container">

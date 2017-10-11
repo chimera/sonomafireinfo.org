@@ -181,7 +181,7 @@ ReactDOM.render(
                   <span className="float-right">
                     {lastUpdated && <LastUpdated date={lastUpdated} />}
                   </span>
-                  {Source ? <a href={Source}>{Description}</a> : Description}
+                  <Link url={Source} label={Description} />
                 </li>
               )
             })}
@@ -191,6 +191,74 @@ ReactDOM.render(
     />
   </ErrorBoundary>,
   document.getElementById('recent-news-table')
+)
+
+// Volunteer
+ReactDOM.render(
+  <ErrorBoundary>
+    <SmartTable
+      type="Volunteer"
+      url="http://app.sonomafireinfo.com/v2/volunteering.json"
+      renderer={({ items }) => {
+        return (
+          <ul className="list-group">
+            {items.map((item, key) => {
+              const { Name, Needs, Source } = item.fields
+              return (
+                <li className="list-group-item" key={key}>
+                  <h5>
+                    <Link url={Source} label={Name} />
+                  </h5>
+                  <ContactLinks fields={item.fields} />
+                  <div className="mt-2 text-muted">
+                    <small>
+                      <strong className="mr-2">NEEDS:</strong>
+                      {Needs}
+                    </small>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        )
+      }}
+    />
+  </ErrorBoundary>,
+  document.getElementById('volunteer-table')
+)
+
+// Donations
+ReactDOM.render(
+  <ErrorBoundary>
+    <SmartTable
+      type="Donations"
+      url="http://app.sonomafireinfo.com/v2/donations.json"
+      renderer={({ items }) => {
+        return (
+          <ul className="list-group">
+            {items.map((item, key) => {
+              const { Name, Needs, Source } = item.fields
+              return (
+                <li className="list-group-item" key={key}>
+                  <h5>
+                    <Link url={Source} label={Name} />
+                  </h5>
+                  <ContactLinks fields={item.fields} />
+                  <div className="mt-2 text-muted">
+                    <small>
+                      <strong className="mr-2">NEEDS:</strong>
+                      {Needs}
+                    </small>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        )
+      }}
+    />
+  </ErrorBoundary>,
+  document.getElementById('donate-table')
 )
 
 // Services
@@ -213,7 +281,12 @@ ReactDOM.render(
                   )}
                   <h5>{fields.Name}</h5>
                   <ContactLinks fields={fields} />
-                  <div className="text-muted mt-3">{fields.Notes}</div>
+                  <div className="text-muted mt-3">
+                    <small>
+                      <strong className="mr-2">NOTES:</strong>
+                      {fields.Notes}
+                    </small>
+                  </div>
                 </div>
               )
             })}
@@ -245,10 +318,10 @@ ReactDOM.render(
                   )}
                   <h5>
                     {fields.Closed ? (
-                      <small>
-                        <del>{fields.Name}</del>{' '}
-                        <span className="ml-3">⚠️ CLOSED</span>
-                      </small>
+                      <span>
+                        <del>{fields.Name}</del>
+                        <small className="ml-3">⚠️ CLOSED</small>
+                      </span>
                     ) : (
                       fields.Name
                     )}
