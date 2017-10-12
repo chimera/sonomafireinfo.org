@@ -1,10 +1,20 @@
-const ContactLinks = require('./contact-links')
-const Fuse = require('fuse.js')
-const LastUpdated = require('./last-updated')
-const Link = require('./link')
-const React = require('react')
+import ContactLinks from './contact-links'
+import Fuse from 'fuse.js'
+import LastUpdated from './last-updated'
+import Link from './link'
+import Note from './note'
+import React from 'react'
+import ShelterProperties from './shelter-properties'
+import PropTypes from 'prop-types'
+import { Item } from './prop-types'
 
-function GenericList({ items }) {
+GenericList.defaultProps = {}
+
+GenericList.propTypes = {
+  items: PropTypes.arrayOf(Item),
+}
+
+export default function GenericList({ items }) {
   return (
     <ul className="list-group">
       {items.map((item, key) => {
@@ -12,32 +22,35 @@ function GenericList({ items }) {
         return (
           <li className="list-group-item" key={key}>
             {fields['Last Updated'] && (
-              <small className="float-right text-muted">
+              <small className="float-right text-muted ml-2">
                 <LastUpdated date={fields['Last Updated']} />
               </small>
             )}
+
             <h5>
-              <Link
-                url={fields.Source}
-                label={fields.Name || fields.Description}
-              />
+              {fields.Closed ? (
+                <span>
+                  <del>{fields.Name}</del>
+                  <small className="ml-3">⚠️ CLOSED</small>
+                </span>
+              ) : (
+                <Link
+                  url={fields.Source}
+                  label={fields.Name || fields.Description}
+                />
+              )}
             </h5>
-            <ContactLinks fields={fields} />
-            {fields.Needs && (
-              <div className="mt-2 text-muted">
-                <small>
-                  <strong className="mr-2">NEEDS:</strong>
-                  {fields.Needs}
-                </small>
-              </div>
+
+            <ContactLinks item={item} />
+            <ShelterProperties item={item} />
+
+            {fields.Needs && <Note label="Needs" note={fields.Needs} />}
+            {fields.Notes && <Note label="Notes" note={fields.Notes} />}
+            {fields['Donation needs'] && (
+              <Note label="Donation needs" note={fields['Donation needs']} />
             )}
-            {fields.Notes && (
-              <div className="mt-2 text-muted">
-                <small>
-                  <strong className="mr-2">NOTES:</strong>
-                  {fields.Notes}
-                </small>
-              </div>
+            {fields['Volunteer needs'] && (
+              <Note label="Volunteer needs" note={fields['Volunteer needs']} />
             )}
           </li>
         )
@@ -45,5 +58,3 @@ function GenericList({ items }) {
     </ul>
   )
 }
-
-module.exports = GenericList

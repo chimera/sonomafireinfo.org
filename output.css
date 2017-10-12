@@ -5552,6 +5552,10 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
+html,
+body {
+  height: 100%; }
+
 .logo {
   max-width: 100%; }
 
@@ -5564,6 +5568,9 @@ a.text-dark:focus, a.text-dark:hover {
 h5 {
   font-size: 1em;
   font-family: "Open Sans", sans-serif; }
+
+button {
+  cursor: pointer; }
 
 .main-heading {
   font-size: 4em;
@@ -5588,3 +5595,25 @@ h5 {
   /* your iframe height */
   margin-top: -500px;
   /* your iframe height */ }
+
+.scroll {
+  opacity: 0.3;
+  background-color: #ea3515;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 5px;
+  border: none;
+  z-index: 1000; }
+  .scroll:hover {
+    opacity: 1; }
+
+.arrow-up {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -9px;
+  margin-left: -8px; }

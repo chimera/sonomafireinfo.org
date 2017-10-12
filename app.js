@@ -1,92 +1,95 @@
 require('whatwg-fetch')
 require('./styles.scss')
 
-const dataHandler = require('./components/data-handler')
-const GenericList = require('./components/generic-list')
-const ImportantList = require('./components/important-list')
-const React = require('react')
-const ReactDOM = require('react-dom')
-const SheltersList = require('./components/shelters-list')
+import Application from './components/application'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-// Important Info
-const ImportantInfo = dataHandler(ImportantList, {
-  type: 'Important Info',
-  url: 'http://app.sonomafireinfo.com/v2/important_info.json',
-})
+const resources = [
+  {
+    id: 'important-info',
+    icon: '⚠️',
+    title: 'Important Info',
+    url: 'http://app.sonomafireinfo.com/v2/important_info.json',
+  },
+  {
+    id: 'updates',
+    icon: '🗞',
+    title: 'Updates',
+    url: 'http://app.sonomafireinfo.com/v2/recent_news.json',
+  },
+  {
+    id: 'volunteer',
+    icon: '🤝',
+    title: 'Volunteer',
+    url: 'http://app.sonomafireinfo.com/v2/volunteering.json',
+  },
+  {
+    id: 'donate',
+    icon: '💸',
+    title: 'Donate',
+    url: 'http://app.sonomafireinfo.com/v2/donations.json',
+  },
+  {
+    id: 'services',
+    icon: '👫',
+    title: 'Services',
+    url: 'http://app.sonomafireinfo.com/v2/support_services.json',
+  },
+  {
+    id: 'shelters',
+    icon: '🏠',
+    title: 'Shelters',
+    url: 'http://app.sonomafireinfo.com/v2/shelters.json',
+  },
+  {
+    // TODO: animal button here...
+    id: 'animal-shelters',
+    icon: '🐶',
+    title: 'Animal Shelters',
+    url: 'http://app.sonomafireinfo.com/v2/animals.json',
+    extraContent() {
+      return (
+        <p className="text-center mt-4 mb-5">
+          <a
+            href="http://animals.sonomafireinfo.com"
+            className="btn btn-info"
+            target="_blank"
+          >
+            <span className=" mr-2 ">🐱</span>
+            Animal Lost & Found
+          </a>
+        </p>
+      )
+    },
+  },
+  {
+    id: 'gas-stations',
+    icon: '⛽️',
+    title: 'Gas Stations',
+    url: 'http://app.sonomafireinfo.com/v2/gas_stations.json',
+  },
+  {
+    id: 'markets',
+    icon: '🥖',
+    title: 'Markets',
+    url: 'http://app.sonomafireinfo.com/v2/markets.json',
+  },
+  {
+    id: 'pharmacies',
+    icon: '💊',
+    title: 'Pharmacies',
+    url: 'http://app.sonomafireinfo.com/v2/pharmacies.json',
+  },
+  {
+    id: 'resources',
+    icon: '📚',
+    title: 'Resources',
+    url: 'http://app.sonomafireinfo.com/v2/resources.json',
+  },
+]
+
 ReactDOM.render(
-  <ImportantInfo />,
-  document.getElementById('important-info-table')
+  <Application resources={resources} />,
+  document.getElementById('app-root')
 )
-
-// Updates
-const Updates = dataHandler(GenericList, {
-  type: 'Updates',
-  url: 'http://app.sonomafireinfo.com/v2/recent_news.json',
-})
-ReactDOM.render(<Updates />, document.getElementById('recent-news-table'))
-
-// Volunteer
-const Volunteer = dataHandler(GenericList, {
-  type: 'Volunteer',
-  url: 'http://app.sonomafireinfo.com/v2/volunteering.json',
-})
-ReactDOM.render(<Volunteer />, document.getElementById('volunteer-table'))
-
-// Donations
-const Donations = dataHandler(GenericList, {
-  type: 'Donations',
-  url: 'http://app.sonomafireinfo.com/v2/donations.json',
-})
-ReactDOM.render(<Donations />, document.getElementById('donate-table'))
-
-// Services
-const Services = dataHandler(GenericList, {
-  type: 'Services',
-  url: 'http://app.sonomafireinfo.com/v2/support_services.json',
-})
-ReactDOM.render(<Services />, document.getElementById('services-table'))
-
-// Shelters
-const Shelters = dataHandler(SheltersList, {
-  type: 'Shelters',
-  url: 'http://app.sonomafireinfo.com/v2/shelters.json',
-})
-ReactDOM.render(<Shelters />, document.getElementById('shelters-table'))
-
-// Animal shelters
-const AnimalShelters = dataHandler(GenericList, {
-  type: 'Animal Shelters',
-  url: 'http://app.sonomafireinfo.com/v2/animals.json',
-})
-ReactDOM.render(
-  <AnimalShelters />,
-  document.getElementById('animal-shelters-table')
-)
-
-// Gas Stations
-const GasStations = dataHandler(GenericList, {
-  type: 'Gas Stations',
-  url: 'http://app.sonomafireinfo.com/v2/gas_stations.json',
-})
-ReactDOM.render(<GasStations />, document.getElementById('gas-stations-table'))
-
-// Markets
-const Markets = dataHandler(GenericList, {
-  type: 'Markets',
-  url: 'http://app.sonomafireinfo.com/v2/markets.json',
-})
-ReactDOM.render(<Markets />, document.getElementById('markets-table'))
-
-// Pharmacies
-const Pharmacies = dataHandler(GenericList, {
-  type: 'Pharmacies',
-  url: 'http://app.sonomafireinfo.com/v2/pharmacies.json',
-})
-ReactDOM.render(<Pharmacies />, document.getElementById('pharmacies-table'))
-
-// Resources
-const Resources = dataHandler(GenericList, {
-  type: 'Resources',
-  url: 'http://app.sonomafireinfo.com/v2/resources.json',
-})
-ReactDOM.render(<Resources />, document.getElementById('resources-table'))

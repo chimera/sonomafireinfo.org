@@ -1,12 +1,11 @@
-const Error = require('./error')
-const ErrorBoundary = require('./error-boundary')
-const fetchResources = require('../fetch-resources')
-const Fuse = require('fuse.js')
-const Loading = require('./loading')
-const React = require('react')
-const Search = require('./search')
+import Error from './error'
+import fetchResources from '../fetch-resources'
+import Fuse from 'fuse.js'
+import Loading from './loading'
+import React from 'react'
+import Search from './search'
 
-function dataHandler(WrappedComponent, { type, url }) {
+export default function dataHandler(WrappedComponent, { title, url }) {
   return class extends React.Component {
     constructor(props) {
       super(props)
@@ -22,7 +21,7 @@ function dataHandler(WrappedComponent, { type, url }) {
     async componentWillMount() {
       this.setState({ ...this.state, error: null, loading: true })
       try {
-        const news = await fetchResources(url, type)
+        const news = await fetchResources(url, title)
         const items = news.items.filter(item => Object.keys(item.fields).length)
         this.setState({
           ...this.state,
@@ -42,16 +41,14 @@ function dataHandler(WrappedComponent, { type, url }) {
         shouldSort: true,
         minMatchCharLength: 1,
         threshold: 0.3,
-        // location: 0,
-        // distance: 100,
-        // maxPatternLength: 32,
         keys: [
           'fields.Name',
+          'fields.Description',
           'fields.Notes',
           'fields.Needs',
-          'fields.Description',
           'fields.Email',
           'fields.Phone',
+          'fields.Address',
         ],
       }
       const fuse = new Fuse(this.state.items, options)
@@ -75,15 +72,13 @@ function dataHandler(WrappedComponent, { type, url }) {
       }
 
       return (
-        <ErrorBoundary>
+        <div>
           <div className="mb-3">
             <Search onChange={text => this.search(text)} />
           </div>
           <WrappedComponent items={this.state.filtered} />
-        </ErrorBoundary>
+        </div>
       )
     }
   }
 }
-
-module.exports = dataHandler

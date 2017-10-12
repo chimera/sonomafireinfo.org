@@ -1,33 +1,39 @@
-const AddressLink = require('./address-link')
-const EmailLink = require('./email-link')
-const PhoneLink = require('./phone-link')
-const React = require('react')
+import AddressLink from './address-link'
+import EmailLink from './email-link'
+import PhoneLink from './phone-link'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Item } from './prop-types'
 
-function ContactLinks({ fields }) {
+ContactLinks.defaultProps = {}
+
+ContactLinks.propTypes = {
+  item: Item,
+}
+
+export default function ContactLinks({ item }) {
   return (
     <div className="mt-2">
       <small>
-        {fields.Address && (
+        {item.fields.Address && (
           <span className="mr-3">
             <span className="mr-2">📍</span>
-            <AddressLink address={fields.Address} />
+            <AddressLink address={item.fields.Address} />
           </span>
         )}
-        {fields.Phone && (
+        {item.fields.Phone && (
           <span className="mr-3">
             <span className="mr-2">📞</span>
-            <PhoneLink number={fields.Phone} />
+            <PhoneLink number={item.fields.Phone} />
           </span>
         )}
-        {fields.Email && (
+        {item.fields.Email && (
           <span className="mr-3">
             <span className="mr-2">✉️</span>
-            <EmailLink email={fields.Email} />
+            <EmailLink email={item.fields.Email} />
           </span>
         )}
       </small>
     </div>
   )
 }
-
-module.exports = ContactLinks
