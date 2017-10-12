@@ -1,6 +1,6 @@
-const React = require('react')
+import React from 'react'
 
-function Search({ onChange, text }) {
+export default function Search({ onChange, text }) {
   return (
     <div className="input-group">
       <span className="input-group-addon">🔎</span>
@@ -15,5 +15,3 @@ function Search({ onChange, text }) {
     </div>
   )
 }
-
-module.exports = Search

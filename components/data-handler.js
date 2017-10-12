@@ -21,8 +21,9 @@ export default function dataHandler(WrappedComponent, { title, url }) {
     async componentWillMount() {
       this.setState({ ...this.state, error: null, loading: true })
       try {
-        const news = await fetchResources(url, title)
-        const items = news.items.filter(item => Object.keys(item.fields).length)
+        const items = await fetchResources(url)
+        console.log(`RESPONSE from ${title}:`, items)
+
         this.setState({
           ...this.state,
           items,
@@ -42,13 +43,15 @@ export default function dataHandler(WrappedComponent, { title, url }) {
         minMatchCharLength: 1,
         threshold: 0.3,
         keys: [
-          'fields.Name',
-          'fields.Description',
-          'fields.Notes',
-          'fields.Needs',
-          'fields.Email',
-          'fields.Phone',
-          'fields.Address',
+          'name',
+          'description',
+          'notes',
+          'needs',
+          'email',
+          'phone',
+          'address',
+          'donationNeeds',
+          'volunteerNeeds',
         ],
       }
       const fuse = new Fuse(this.state.items, options)

@@ -18,25 +18,24 @@ export default function GenericList({ items }) {
   return (
     <ul className="list-group">
       {items.map((item, key) => {
-        const fields = item.fields
         return (
           <li className="list-group-item" key={key}>
-            {fields['Last Updated'] && (
+            {item.lastUpdated && (
               <small className="float-right text-muted ml-2">
-                <LastUpdated date={fields['Last Updated']} />
+                <LastUpdated date={item.lastUpdated} />
               </small>
             )}
 
             <h5>
-              {fields.Closed ? (
+              {item.closed ? (
                 <span>
-                  <del>{fields.Name}</del>
+                  <del>{item.name}</del>
                   <small className="ml-3">⚠️ CLOSED</small>
                 </span>
               ) : (
                 <Link
-                  url={fields.Source}
-                  label={fields.Name || fields.Description}
+                  url={item.website || item.source}
+                  label={item.name || item.description}
                 />
               )}
             </h5>
@@ -44,13 +43,13 @@ export default function GenericList({ items }) {
             <ContactLinks item={item} />
             <ShelterProperties item={item} />
 
-            {fields.Needs && <Note label="Needs" note={fields.Needs} />}
-            {fields.Notes && <Note label="Notes" note={fields.Notes} />}
-            {fields['Donation needs'] && (
-              <Note label="Donation needs" note={fields['Donation needs']} />
+            {item.needs && <Note label="Needs" note={item.needs} />}
+            {item.notes && <Note label="Notes" note={item.notes} />}
+            {item.donationNeeds && (
+              <Note label="Donation needs" note={item.donationNeeds} />
             )}
-            {fields['Volunteer needs'] && (
-              <Note label="Volunteer needs" note={fields['Volunteer needs']} />
+            {item.volunteerNeeds && (
+              <Note label="Volunteer needs" note={item.volunteerNeeds} />
             )}
           </li>
         )

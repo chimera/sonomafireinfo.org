@@ -1,6 +1,6 @@
-const React = require('react')
+import React from 'react'
 
-function LastUpdated({ date }) {
+export default function LastUpdated({ date }) {
   date = new Date(date)
 
   // Pad minutes with leading zero if necessary.
@@ -14,5 +14,3 @@ function LastUpdated({ date }) {
     </time>
   )
 }
-
-module.exports = LastUpdated

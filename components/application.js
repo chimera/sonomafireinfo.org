@@ -14,7 +14,7 @@ Application.propTypes = {
 export default function Application({ resources }) {
   return (
     <ErrorBoundary>
-      <ScrollUp scrollStepInPx="100" delayInMs="10" />
+      <ScrollUp scrollStepInPx="1000" delayInMs="10" />
       {resources.map((resource, key) => (
         <Section key={key} resource={resource} />
       ))}
