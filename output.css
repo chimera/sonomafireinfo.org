@@ -5552,10 +5552,11 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
+.logo {
+  max-width: 100%; }
+
 .section {
   padding: 4.5em 0; }
-  .section:nth-child(even) {
-    background: #f8f9fa; }
   @media (max-width: 991px) {
     .section {
       padding: 2em 0; } }
@@ -5583,9 +5584,9 @@ h5 {
   background: transparent;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 500px;
   /* your iframe height */
-  top: 400px;
+  top: 500px;
   /* your iframe height */
-  margin-top: -400px;
+  margin-top: -500px;
   /* your iframe height */ }

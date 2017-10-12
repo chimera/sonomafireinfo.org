@@ -1,4 +1,3 @@
-require('babel-polyfill')
 require('whatwg-fetch')
 require('./styles.scss')
 
