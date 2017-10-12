@@ -1,9 +1,9 @@
 class TextsController < ApplicationController
   def create
-    if params[:password] == ENV['SONOMAFIRE_BASIC_AUTH']
-      Text.send_message params[:message]
+    if params['From'] == ENV['SONOMAFIRE_FROM_NUMBER'] && Rails.env.production?
+      Text.send_message params['Body']
     else
-      puts "Bad password"
+      puts "Send message #{params['Body']}"
     end
 
     render text: 'ok'
