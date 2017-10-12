@@ -21,7 +21,7 @@ const resources = [
       return (
         <p className="lead my-4 text-center">
           <a href="#contact" className="btn btn-success">
-            <span class="mr-2">💌</span>
+            <span className="mr-2">💌</span>
             Send us updated info
           </a>
         </p>
