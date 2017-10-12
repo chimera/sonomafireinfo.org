@@ -17,6 +17,16 @@ const resources = [
     icon: '🗞',
     title: 'Updates',
     url: 'http://app.sonomafireinfo.com/v2/recent_news.json',
+    extraContent() {
+      return (
+        <p className="lead my-4 text-center">
+          <a href="#contact" className="btn btn-success">
+            <span class="mr-2">💌</span>
+            Send us updated info
+          </a>
+        </p>
+      )
+    },
   },
   {
     id: 'volunteer',
@@ -53,10 +63,10 @@ const resources = [
         <p className="text-center mt-4 mb-5">
           <a
             href="http://animals.sonomafireinfo.com"
-            className="btn btn-info"
+            className="btn btn-success"
             target="_blank"
           >
-            <span className=" mr-2 ">🐱</span>
+            <span className=" mr-2 ">👀</span>
             Animal Lost & Found
           </a>
         </p>
