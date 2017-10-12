@@ -3,4 +3,6 @@ Rails.application.routes.draw do
     get "/v2/#{x}", to: "tables##{x}_v2"
     get "/#{x}", to: "tables##{x}"
   end
+
+  resources :texts
 end
