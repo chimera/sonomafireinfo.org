@@ -1,6 +1,6 @@
-const React = require('react')
+import React from 'react'
 
-function Link({ label, url }) {
+export default function Link({ label, url }) {
   if (!url) {
     return <span>{label}</span>
   }
@@ -11,5 +11,3 @@ function Link({ label, url }) {
     </a>
   )
 }
-
-module.exports = Link

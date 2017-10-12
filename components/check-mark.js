@@ -1,7 +1,5 @@
-const React = require('react')
+import React from 'react'
 
-function CheckMark() {
+export default function CheckMark() {
   return <span>✅</span>
 }
-
-module.exports = CheckMark

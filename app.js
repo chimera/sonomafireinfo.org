@@ -19,7 +19,7 @@ const resources = [
     url: 'http://app.sonomafireinfo.com/v2/recent_news.json',
     extraContent() {
       return (
-        <p className="lead my-4 text-center">
+        <p className="my-4 text-center">
           <a href="#contact" className="btn btn-success">
             <span className="mr-2">💌</span>
             Send us updated info
@@ -33,6 +33,20 @@ const resources = [
     icon: '🤝',
     title: 'Volunteer',
     url: 'http://app.sonomafireinfo.com/v2/volunteering.json',
+    extraContent() {
+      return (
+        <p className="my-4 text-center">
+          <a
+            href="http://www.signupgenius.com/go/10C0F44AAA829AAF85-alllevels"
+            target="_blank"
+            className="btn btn-success"
+          >
+            <span class="mr-2">👩‍⚕️</span>
+            Medical Professional Volunteers
+          </a>
+        </p>
+      )
+    },
   },
   {
     id: 'donate',
@@ -60,7 +74,7 @@ const resources = [
     url: 'http://app.sonomafireinfo.com/v2/animals.json',
     extraContent() {
       return (
-        <p className="text-center mt-4 mb-5">
+        <p className="my-4 text-center">
           <a
             href="http://animals.sonomafireinfo.com"
             className="btn btn-success"

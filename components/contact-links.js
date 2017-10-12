@@ -15,22 +15,22 @@ export default function ContactLinks({ item }) {
   return (
     <div className="mt-2">
       <small>
-        {item.fields.Address && (
+        {item.address && (
           <span className="mr-3">
             <span className="mr-2">📍</span>
-            <AddressLink address={item.fields.Address} />
+            <AddressLink address={item.address} />
           </span>
         )}
-        {item.fields.Phone && (
+        {item.phone && (
           <span className="mr-3">
             <span className="mr-2">📞</span>
-            <PhoneLink number={item.fields.Phone} />
+            <PhoneLink number={item.phone} />
           </span>
         )}
-        {item.fields.Email && (
+        {item.email && (
           <span className="mr-3">
             <span className="mr-2">✉️</span>
-            <EmailLink email={item.fields.Email} />
+            <EmailLink email={item.email} />
           </span>
         )}
       </small>

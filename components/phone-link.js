@@ -1,7 +1,7 @@
-const React = require('react')
-const PhoneNumber = require('awesome-phonenumber')
+import React from 'react'
+import PhoneNumber from 'awesome-phonenumber'
 
-function PhoneLink({ number }) {
+export default function PhoneLink({ number }) {
   const cleaned = new PhoneNumber(number, 'US')
   return (
     <a href={`tel:1${cleaned.getNumber('significant')}`}>
@@ -9,5 +9,3 @@ function PhoneLink({ number }) {
     </a>
   )
 }
-
-module.exports = PhoneLink

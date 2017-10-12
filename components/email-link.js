@@ -1,7 +1,5 @@
-const React = require('react')
+import React from 'react'
 
-function EmailLink({ email }) {
+export default function EmailLink({ email }) {
   return <a href={`mailto:${email}`}>{email}</a>
 }
-
-module.exports = EmailLink

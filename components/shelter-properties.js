@@ -9,10 +9,10 @@ ShelterProperties.propTypes = {
 }
 
 export default function ShelterProperties({ item }) {
-  const capacity = item.fields['At capacity']
-  const elder = item.fields['Elder Care']
-  const spanish = item.fields['Hablan español']
-  const redCross = item.fields['Red Cross Facility']
+  const capacity = item.atCapacity
+  const elder = item.elderCare
+  const spanish = item.hablanEspanol
+  const redCross = item.redCrossFacility
 
   if (!capacity || !elder || !spanish || !redCross) {
     return null

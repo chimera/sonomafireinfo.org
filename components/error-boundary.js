@@ -1,6 +1,6 @@
-const React = require('react')
+import React from 'react'
 
-class ErrorBoundary extends React.Component {
+export default class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props)
     this.state = { error: false }
@@ -19,5 +19,3 @@ class ErrorBoundary extends React.Component {
     return this.props.children
   }
 }
-
-module.exports = ErrorBoundary

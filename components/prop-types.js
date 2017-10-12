@@ -8,28 +8,27 @@ export const Resource = PropTypes.shape({
 })
 
 export const Item = PropTypes.shape({
-  fields: PropTypes.shape({
-    // Generic fields
-    Name: PropTypes.string,
-    Description: PropTypes.string,
-    Notes: PropTypes.string,
-    Needs: PropTypes.string,
-    Phone: PropTypes.string,
-    Email: PropTypes.string,
-    Address: PropTypes.string,
-    Source: PropTypes.string,
-    'Last Updated': PropTypes.string,
+  // Generic data
+  name: PropTypes.string,
+  description: PropTypes.string,
+  notes: PropTypes.string,
+  needs: PropTypes.string,
+  phone: PropTypes.string,
+  email: PropTypes.string,
+  address: PropTypes.string,
+  source: PropTypes.string,
+  website: PropTypes.string,
+  lastUpdated: PropTypes.string,
 
-    // Extra content
-    extraContent: PropTypes.func,
+  // Extra content
+  extraContent: PropTypes.func,
 
-    // Shelter specific
-    Closed: PropTypes.bool,
-    'Donation needs': PropTypes.string,
-    'Volunteer needs': PropTypes.string,
-    'At capacity': PropTypes.bool,
-    'Elder Care': PropTypes.bool,
-    'Hablan español': PropTypes.bool,
-    'Red Cross Facility': PropTypes.bool,
-  }),
+  // Shelter specific
+  closed: PropTypes.bool,
+  donationNeeds: PropTypes.string,
+  volunteerNeeds: PropTypes.string,
+  atCapacity: PropTypes.bool,
+  elderCare: PropTypes.bool,
+  hablanEspanol: PropTypes.bool,
+  redCrossFacility: PropTypes.bool,
 })

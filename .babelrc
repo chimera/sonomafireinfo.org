@@ -1,4 +1,5 @@
 {
+  "plugins": ["react-html-attrs"],
   "presets": [
     "react",
     "stage-0",

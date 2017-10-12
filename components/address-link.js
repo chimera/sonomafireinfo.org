@@ -1,11 +1,9 @@
-const React = require('react')
+import React from 'react'
 
-function AddressLink({ address }) {
+export default function AddressLink({ address }) {
   return (
     <a href={`https://maps.google.com/?q=${address}`} target="_blank">
       {address}
     </a>
   )
 }
-
-module.exports = AddressLink

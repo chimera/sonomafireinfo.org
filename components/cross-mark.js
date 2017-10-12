@@ -1,7 +1,5 @@
-const React = require('react')
+import React from 'react'
 
-function CrossMark() {
+export default function CrossMark() {
   return <span>❌</span>
 }
-
-module.exports = CrossMark

@@ -27,7 +27,7 @@ export default function Section({ resource }) {
         )}
         {extra}
         <div className="row">
-          <div className="col-md-6 mx-auto">
+          <div className="col-lg-6 mx-auto">
             <List />
           </div>
         </div>
