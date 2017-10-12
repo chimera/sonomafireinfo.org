@@ -8,11 +8,13 @@ class Text
     client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
     numbers.each do |number|
       begin
-      client.api.account.messages.create(
-        from: '+17078004983',
-        to: '+1#{number}',
-        body: msg
-      )
+
+        client.api.account.messages.create(
+          from: '+17078004983',
+          to: "+1#{number}",
+          body: msg
+        )
+        Rails.logger.info "Send message to #{number}"
       rescue Exception => e
         puts "Failed #{e}"
       end
