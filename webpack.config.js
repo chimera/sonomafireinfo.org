@@ -3,7 +3,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const webpack = require('webpack')
 
 const config = {
-  entry: ['./app.js'],
+  entry: ['babel-polyfill', './app.js'],
   output: {
     path: __dirname,
     filename: 'build.js',
