@@ -15,7 +15,6 @@ AirtableSheets = {
   },
   important_info: {
     klass: :ImportantInfo,
-    sort: { "Name" => "asc" },
   },
   support_services: {
     klass: :SupportServices,
