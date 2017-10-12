@@ -1,8 +1,8 @@
 class TextsController < ApplicationController
-  http_basic_authenticate_with name: "sonomafireinfo", password: ENV['SONOMAFIRE_BASIC_AUTH']
-
   def create
-    Text.send_sms params[:message]
+    if params[:password] == ENV['SONOMAFIRE_BASIC_AUTH']
+      Text.send_message params[:message]
+    end
 
     render text: 'ok'
   end

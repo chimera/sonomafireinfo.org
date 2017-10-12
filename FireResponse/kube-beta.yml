@@ -14,7 +14,7 @@ spec:
       #   imagePullPolicy: Always
       #   image: gcr.io/opszero-173723/fireresponse:latest
       #   command: ["bundle",  "exec", "rake", "infra_dump:gather"]
-      - name: fireresponse-beta
+      - name: fireresponse
         image: gcr.io/opszero-173723/fireresponse:latest
         imagePullPolicy: Always
         ports:
