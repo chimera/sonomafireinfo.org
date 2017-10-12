@@ -12,7 +12,7 @@ class Text
         client.api.account.messages.create(
           from: '+17078004983',
           to: "+1#{number}",
-          body: msg
+          body: "SonomaFireInfo.com: #{msg}"
         )
         Rails.logger.info "Send message to #{number}"
       rescue Exception => e
