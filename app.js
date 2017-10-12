@@ -7,7 +7,6 @@ const ImportantList = require('./components/important-list')
 const React = require('react')
 const ReactDOM = require('react-dom')
 const SheltersList = require('./components/shelters-list')
-const UpdatesList = require('./components/updates-list')
 
 // Important Info
 const ImportantInfo = dataHandler(ImportantList, {
@@ -20,7 +19,7 @@ ReactDOM.render(
 )
 
 // Updates
-const Updates = dataHandler(UpdatesList, {
+const Updates = dataHandler(GenericList, {
   type: 'Updates',
   url: 'http://app.sonomafireinfo.com/v2/recent_news.json',
 })

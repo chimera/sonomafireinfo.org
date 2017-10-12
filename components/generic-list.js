@@ -17,7 +17,10 @@ function GenericList({ items }) {
               </small>
             )}
             <h5>
-              <Link url={fields.Source} label={fields.Name} />
+              <Link
+                url={fields.Source}
+                label={fields.Name || fields.Description}
+              />
             </h5>
             <ContactLinks fields={fields} />
             {fields.Needs && (

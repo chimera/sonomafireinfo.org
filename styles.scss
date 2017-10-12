@@ -25,13 +25,8 @@ $h2-font-size: 2.6rem;
 }
 
 h5 {
-  font-size: 1.2em;
-
-  @include media-breakpoint-down(md) {
-    & {
-      font-size: 1em;
-    }
-  }
+  font-size: 1em;
+  font-family: $font-family-sans-serif;
 }
 
 .main-heading {
