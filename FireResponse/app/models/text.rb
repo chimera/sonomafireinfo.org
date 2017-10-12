@@ -3,7 +3,7 @@ class Text
     typeform_id = ENV['TYPEFORM_ID']
 
     form = Typeform::Form.new(typeform_id)
-    numbers = form.complete_entries.responses.map { |x| x.answers["textfield_63444528"].gsub(/\D/, '') }
+    numbers = form.complete_entries.responses.map { |x| x.answers["textfield_63444528"].gsub(/\D/, '') }.sort.uniq
 
     client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
     numbers.each do |number|
