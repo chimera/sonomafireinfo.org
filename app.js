@@ -35,16 +35,29 @@ const resources = [
     url: 'http://app.sonomafireinfo.com/v2/volunteering.json',
     extraContent() {
       return (
-        <p className="my-4 text-center">
-          <a
-            href="http://www.signupgenius.com/go/10C0F44AAA829AAF85-alllevels"
-            target="_blank"
-            className="btn btn-success"
-          >
-            <span class="mr-2">👩‍⚕️</span>
-            Medical Professional Volunteers
-          </a>
-        </p>
+        <div className="my-4 text-center">
+          <p className="text-muted mb-2">
+            <small>Medical professional? Signup to volunteer:</small>
+          </p>
+          <p>
+            <a
+              href="http://www.signupgenius.com/go/10C0F44AAA829AAF85-alllevels"
+              target="_blank"
+              className="btn btn-success mr-3"
+            >
+              <span class="mr-2">👩‍⚕️</span>
+              Elsie Allen
+            </a>
+            <a
+              href="https://www.signupgenius.com/index.cfm?go=s.signup&urlid=508044fa8a62da1fe3-sonomamarin"
+              target="_blank"
+              className="btn btn-info"
+            >
+              <span class="mr-2">👩‍⚕️</span>
+              Petaluma
+            </a>
+          </p>
+        </div>
       )
     },
   },
