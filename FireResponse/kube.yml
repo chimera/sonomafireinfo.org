@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: fireresponse
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
         app: fireresponse
     spec:
       containers:
-      - name: worker
-        imagePullPolicy: Always
-        image: gcr.io/opszero-173723/fireresponse:latest
-        command: ["./server.sh"]
+      # - name: worker
+      #   imagePullPolicy: Always
+      #   image: gcr.io/opszero-173723/fireresponse:c72a8cbe8c90f137d7291e6f99ea923f411e7ed0-2017-10-12-22-16-20
+      #   command: ["./server.sh"]
       - name: fireresponse
-        image: gcr.io/opszero-173723/fireresponse:latest
+        image: gcr.io/opszero-173723/fireresponse:c72a8cbe8c90f137d7291e6f99ea923f411e7ed0-2017-10-12-22-16-20
         imagePullPolicy: Always
         ports:
         - containerPort: 3000

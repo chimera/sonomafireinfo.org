@@ -175,7 +175,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  twilio-ruby (~> 5.3.1)
+  twilio-ruby
   typeform
   tzinfo-data
 
