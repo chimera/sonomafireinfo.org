@@ -10,10 +10,10 @@ spec:
         app: fireresponse-beta
     spec:
       containers:
-      - name: worker
-        imagePullPolicy: Always
-        image: gcr.io/opszero-173723/fireresponse:latest
-        command: ["./server.sh"]
+      # - name: worker
+      #   imagePullPolicy: Always
+      #   image: gcr.io/opszero-173723/fireresponse:latest
+      #   command: ["./server.sh"]
       - name: fireresponse
         image: gcr.io/opszero-173723/fireresponse:latest
         imagePullPolicy: Always
