@@ -1,3 +1,5 @@
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+//   .BundleAnalyzerPlugin
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const webpack = require('webpack')
@@ -28,6 +30,7 @@ const config = {
     new ExtractTextPlugin('output.css'),
     new webpack.IgnorePlugin(/\.\/locale$/),
     new UglifyJSPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
   // devtool: 'eval',
 }

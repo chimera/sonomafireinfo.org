@@ -39,6 +39,7 @@ export default function GenericList({ items }) {
                   label={item.name || item.description}
                 />
               )}
+              {item.data && <strong class="ml-3">{item.data}</strong>}
             </h5>
 
             <ContactLinks item={item} />

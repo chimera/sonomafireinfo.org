@@ -46,7 +46,7 @@ const resources = [
               className="btn btn-success mr-3"
             >
               <span class="mr-2">👩‍⚕️</span>
-              Elsie Allen
+              Sonoma Community Response
             </a>
             <a
               href="https://www.signupgenius.com/index.cfm?go=s.signup&urlid=508044fa8a62da1fe3-sonomamarin"
@@ -123,6 +123,12 @@ const resources = [
     icon: '📚',
     title: 'Resources',
     url: 'http://app.sonomafireinfo.com/v2/resources.json',
+  },
+  {
+    id: 'stats',
+    icon: '📈',
+    title: 'Stats',
+    url: 'http://app.sonomafireinfo.com/v2/stats.json',
   },
 ]
 

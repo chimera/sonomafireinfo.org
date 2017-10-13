@@ -20,6 +20,9 @@ export const Item = PropTypes.shape({
   website: PropTypes.string,
   lastUpdated: PropTypes.string,
 
+  // Data (stats)
+  data: PropTypes.bool,
+
   // Priority
   priority: PropTypes.bool,
 

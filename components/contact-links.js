@@ -12,6 +12,11 @@ ContactLinks.propTypes = {
 }
 
 export default function ContactLinks({ item }) {
+  const empty = !Boolean(Object.keys(item).length)
+  if (!item || empty) {
+    return null
+  }
+
   return (
     <div className="mt-2">
       <small>
