@@ -1,9 +1,8 @@
+require 'open-uri'
+
 class Text
   def self.send_message(msg)
-    typeform_id = ENV['TYPEFORM_ID']
-
-    form = Typeform::Form.new(typeform_id)
-    numbers = form.complete_entries.responses.map { |x| x.answers["textfield_63444528"].gsub(/\D/, '') }.sort.uniq
+    numbers = open(ENV['NUMBER_SHEET']).read.split("\n").map { |x| x.gsub(/\D/, '') }.sort.uniq
 
     client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
     numbers.each do |number|
