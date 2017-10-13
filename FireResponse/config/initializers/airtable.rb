@@ -65,6 +65,10 @@ AirtableSheets = {
     klass: :Stats,
     sort: { "Name" => "asc" },
   },
+  team_members: {
+    klass: :TeamMembers,
+    sort: { "Name" => "asc" },
+  }
 }
 
 AirtableSheets.each do |k,v|
