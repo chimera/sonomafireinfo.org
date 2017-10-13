@@ -27,6 +27,7 @@ export default function GenericList({ items }) {
             )}
 
             <h5>
+              {item.priority && <span class="mr-2">⚠️</span>}
               {item.closed ? (
                 <span>
                   <del>{item.name}</del>
