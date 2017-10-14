@@ -12,7 +12,7 @@ export default function AboutPage({}) {
   const team = {
     icon: '🕺',
     title: 'Team',
-    url: 'http://app.sonomafireinfo.com/v2/team_members.json'
+    url: 'http://app.sonomafireinfo.com/v2/team_members.json',
   }
   const List = dataHandler(GenericList, team)
 

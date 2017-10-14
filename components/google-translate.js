@@ -6,7 +6,7 @@ export default class GoogleTranslate extends React.Component {
     new google.translate.TranslateElement(
       {
         pageLanguage: 'en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
       },
       'google_translate_element'
     )

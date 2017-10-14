@@ -11,7 +11,7 @@ import { Item } from './prop-types'
 GenericList.defaultProps = {}
 
 GenericList.propTypes = {
-  items: PropTypes.arrayOf(Item)
+  items: PropTypes.arrayOf(Item),
 }
 
 export default function GenericList({ items }) {

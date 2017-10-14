@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 MapPage.defaultProps = {}
 
 MapPage.propTypes = {
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
 }
 
 export default function MapPage({ url }) {

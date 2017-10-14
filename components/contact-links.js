@@ -8,7 +8,7 @@ import { Item } from './prop-types'
 ContactLinks.defaultProps = {}
 
 ContactLinks.propTypes = {
-  item: Item
+  item: Item,
 }
 
 export default function ContactLinks({ item }) {
