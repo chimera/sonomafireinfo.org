@@ -139,7 +139,7 @@ export const sections = [
     links: [
       {
         path: 'shelters',
-        title: 'Shelter',
+        title: 'Shelters',
         icon: '🏠',
       },
       {

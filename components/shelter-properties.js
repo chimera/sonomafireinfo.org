@@ -9,19 +9,25 @@ ShelterProperties.propTypes = {
 }
 
 export default function ShelterProperties({ item }) {
+  const animals = item.animals
   const capacity = item.atCapacity
   const elder = item.elderCare
   const spanish = item.hablanEspanol
   const redCross = item.redCrossFacility
   const medical = item.medical
 
-  if (capacity || elder || spanish || redCross) {
+  if (animals || capacity || elder || spanish || redCross) {
     return (
       <div className="mt-2">
         <small>
           {capacity && (
             <strong className="mr-3 text-danger" title="At capacity">
               <span className="mr-2">❌</span> At Capacity
+            </strong>
+          )}
+          {animals && (
+            <strong className="mr-3 text-danger" title="Accepts animals">
+              <span className="mr-2">🐶</span> Accepts Animals
             </strong>
           )}
           {elder && (
