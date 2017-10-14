@@ -1,5 +1,4 @@
 import ExternalLink from './external-link'
-import Sponsors from './sponsors'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
@@ -16,8 +15,9 @@ export default function Navigation() {
         <div key={key}>
           <h5 className="navigation-heading text-center text-muted my-3">
             {section.heading}
-          </h5>
+          </h5>{' '}
           <nav className="list-group">
+            {' '}
             {section.links.map((link, key) => {
               if (link.url) {
                 return (
@@ -47,7 +47,6 @@ export default function Navigation() {
           </nav>
         </div>
       ))}
-      <Sponsors />
     </div>
   )
 }

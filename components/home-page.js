@@ -1,8 +1,10 @@
+import Calendar from './calendar'
 import Logo from './logo'
 import Navigation from './navigation'
 import PageWrapper from './page-wrapper'
 import PropTypes from 'prop-types'
 import React from 'react'
+import Sponsors from './sponsors'
 
 HomePage.defaultProps = {}
 
@@ -15,6 +17,8 @@ export default function HomePage() {
         <Logo />
       </div>
       <Navigation />
+      <Calendar />
+      <Sponsors />
     </PageWrapper>
   )
 }
