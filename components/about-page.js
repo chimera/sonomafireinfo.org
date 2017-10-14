@@ -27,8 +27,8 @@ export default function AboutPage({}) {
       <p>
         The goal of sonomafireinfo.com is to collect, verify, and publish
         up-to-date information from as many resources as possible. However, we
-        are not a volunteer or donation processing site. If you are able to
-        help in any way, please use our site to find a verified match for your
+        are not a volunteer or donation processing site. If you are able to help
+        in any way, please use our site to find a verified match for your
         capabilities or goods.
       </p>
       <p>
@@ -47,7 +47,11 @@ export default function AboutPage({}) {
       <p>An (alphabetical) list of the core team.</p>
       <ul>
         <li>Abhi Yerra</li>
-        <li>Dana Woodman</li>
+        <li>
+          <a href="http://danawoodman.com" target="_blank">
+            Dana Woodman
+          </a>
+        </li>
         <li>Michael Doherty</li>
         <li>Nicole Clark</li>
         <li>R. Tyler Croy</li>
