@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sonomafireinfo
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: sonomafireinfo
+    spec:
+      containers:
+      - name: sonomafireinfo
+        image: gcr.io/opszero-173723/sonomafireinfo:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: sonomafireinfo
+spec:
+  type: LoadBalancer
+  selector:
+    app: sonomafireinfo
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
