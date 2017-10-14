@@ -29,6 +29,7 @@ export const Item = PropTypes.shape({
   source: PropTypes.string,
   website: PropTypes.string,
   lastUpdated: PropTypes.string,
+  facebookLink: PropTypes.string,
 
   // Data (stats)
   data: PropTypes.string,

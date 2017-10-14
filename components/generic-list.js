@@ -1,7 +1,7 @@
 import ContactLinks from './contact-links'
 import Fuse from 'fuse.js'
 import LastUpdated from './last-updated'
-import Link from './link'
+import ExternalLink from './external-link'
 import Note from './note'
 import React from 'react'
 import ShelterProperties from './shelter-properties'
@@ -34,10 +34,11 @@ export default function GenericList({ items }) {
                   <small className="ml-3">⚠️ CLOSED</small>
                 </span>
               ) : (
-                <Link
-                  url={item.website || item.source}
-                  label={item.name || item.description}
-                />
+                <ExternalLink
+                  url={item.website || item.source || item.facebookLink}
+                >
+                  {item.name || item.description}
+                </ExternalLink>
               )}
               {item.data && <strong class="ml-3">{item.data}</strong>}
             </div>
