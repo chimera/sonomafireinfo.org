@@ -12,28 +12,37 @@ export default function Sponsors() {
         Sponsors
       </h5>
       <div class="row">
-        <div className="col-md-6 mb-4">
+        <div className="col-sm-6 mb-4">
           <img src="/images/google.png" alt="Google" className="img-fluid" />
         </div>
-        <div className="col-md-6 mb-4">
+        <div className="col-sm-6 mb-4">
           <img src="/images/twilio.png" alt="Twilio" className="img-fluid" />
         </div>
       </div>
       <div class="row">
-        <div className="col-md-6 mb-4">
+        <div className="col-sm-6 mb-4">
           <img
             src="/images/airtable.png"
             alt="AirTable"
             className="img-fluid"
           />
         </div>
-        <div className="col-md-6 mb-4">
+        <div className="col-sm-6 mb-4">
           <img src="/images/zapier.png" alt="Zapier" className="img-fluid" />
         </div>
       </div>
       <div class="row">
-        <div className="col-md-6 mx-auto">
+        <div className="col-sm-6 mx-auto">
           <img src="/images/mapbox.png" alt="MapBox" className="img-fluid" />
+        </div>
+        <div className="col-sm-6 mx-auto">
+          <a href="http://chimeraarts.org" target="_blank">
+            <img
+              src="/images/chimera.png"
+              alt="Chimera"
+              className="img-fluid"
+            />
+          </a>
         </div>
       </div>
     </div>
