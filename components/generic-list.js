@@ -21,7 +21,7 @@ export default function GenericList({ items }) {
         return (
           <li className="list-group-item" key={key}>
             {item.lastUpdated && (
-              <small className="float-right text-muted ml-2">
+              <small className="float-md-right text-muted ml-md-1">
                 <LastUpdated date={item.lastUpdated} />
               </small>
             )}

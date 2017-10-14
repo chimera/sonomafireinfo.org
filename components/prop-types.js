@@ -9,7 +9,10 @@ export const Resource = PropTypes.shape({
 export const NavLink = PropTypes.shape({
   icon: PropTypes.node.isRequire,
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  path: PropTypes.string,
+  url: PropTypes.string,
+  description: PropTypes.string,
+  highlight: PropTypes.bool,
 })
 
 export const NavSection = PropTypes.shape({

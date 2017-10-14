@@ -118,6 +118,12 @@ export const sections = [
   {
     links: [
       {
+        path: 'updates',
+        title: 'Recent Updates',
+        icon: '🗞',
+        // highlight: true,
+      },
+      {
         path: 'important-info',
         title: 'Important Info',
         icon: '⛑',
@@ -174,19 +180,15 @@ export const sections = [
       },
       {
         url: 'http://www.sonomacounty.recovers.org/',
-        title: 'SoCo Recovery Network',
+        title: 'SoCo Recovers',
         icon: '🎁',
+        description: 'Community site to receive/request help.',
       },
     ],
   },
   {
-    heading: 'News & Information',
+    heading: 'Information',
     links: [
-      {
-        path: 'updates',
-        title: 'Updates',
-        icon: '🗞',
-      },
       {
         path: 'stats',
         title: 'Stats',

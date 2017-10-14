@@ -5,6 +5,7 @@ import AlertBar from './alert-bar'
 import ErrorBoundary from './error-boundary'
 import HomePage from './home-page'
 import MapPage from './map-page'
+import PageWrapper from './page-wrapper'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Section from './section'
@@ -43,7 +44,9 @@ export default function Application() {
             <Route
               path="/:id"
               render={({ match }) => (
-                <Section resource={resources[match.params.id]} />
+                <PageWrapper>
+                  <Section resource={resources[match.params.id]} />
+                </PageWrapper>
               )}
             />
             {/* <Route
