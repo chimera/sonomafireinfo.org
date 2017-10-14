@@ -44,7 +44,9 @@ const config = {
 }
 
 if (ENV === 'production') {
-  config.plugins.push(new UglifyJSPlugin())
+  config.plugins.push(
+    new UglifyJSPlugin({ uglifyOptions: { ecma: 5, ie8: true } })
+  )
 }
 
 if (ENV === 'development') {
