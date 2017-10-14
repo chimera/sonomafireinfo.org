@@ -2,9 +2,19 @@ import PropTypes from 'prop-types'
 
 export const Resource = PropTypes.shape({
   icon: PropTypes.node.isRequire,
-  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
+})
+
+export const NavLink = PropTypes.shape({
+  icon: PropTypes.node.isRequire,
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+})
+
+export const NavSection = PropTypes.shape({
+  links: PropTypes.arrayOf(NavLink).isRequired,
+  heading: PropTypes.string,
 })
 
 export const Item = PropTypes.shape({
@@ -21,7 +31,7 @@ export const Item = PropTypes.shape({
   lastUpdated: PropTypes.string,
 
   // Data (stats)
-  data: PropTypes.bool,
+  data: PropTypes.string,
 
   // Priority
   priority: PropTypes.bool,

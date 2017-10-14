@@ -26,7 +26,7 @@ export default function GenericList({ items }) {
               </small>
             )}
 
-            <h5>
+            <div>
               {item.priority && <span class="mr-2">⚠️</span>}
               {item.closed ? (
                 <span>
@@ -40,7 +40,7 @@ export default function GenericList({ items }) {
                 />
               )}
               {item.data && <strong class="ml-3">{item.data}</strong>}
-            </h5>
+            </div>
 
             <ContactLinks item={item} />
             <ShelterProperties item={item} />

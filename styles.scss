@@ -19,18 +19,8 @@ body {
   max-width: 100%;
 }
 
-.section {
-  padding: 4.5em 0;
-
-  @include media-breakpoint-down(md) {
-    & {
-      padding: 2em 0;
-    }
-  }
-}
-
-h5 {
-  font-size: 1em;
+.navgiation-heading {
+  font-size: 1.2em;
   font-family: $font-family-sans-serif;
 }
 
@@ -46,15 +36,6 @@ button {
     & {
       font-size: 2.2em;
     }
-  }
-}
-
-.alert-bar {
-  .alert-bar-label {
-    font-size: 1.4em;
-  }
-  .alert-bar-message {
-    font-size: 1.1em;
   }
 }
 
