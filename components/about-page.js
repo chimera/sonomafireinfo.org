@@ -63,7 +63,37 @@ export default function AboutPage({}) {
         Volunteered but aren't on this list?{' '}
         <a href="mailto:sonomafireinfo@gmail.com">Contact us</a>
       </p>
-      <h3 className="mt-5">Developer?</h3>
+      <h3 className="mt-5">Technical Notes</h3>
+      <p>
+        SonomaFireInfo.com is built using a combination of tools, including:
+      </p>
+      <ul>
+        <li>
+          <strong>React/Bootstrap</strong> - Frontend tooling to create a mobile
+          friendly, fast client UI.
+        </li>
+        <li>
+          <strong>AirTable</strong> - Our collaborative information database
+          that represents the content on the site.
+        </li>
+        <li>
+          <strong>Ruby on Rails</strong> - API server that takes AirTable tables
+          and turns them into JSON endpoints
+        </li>
+        <li>
+          <strong>Github Pages</strong> - Hosting of frontend static assets.
+        </li>
+        <li>
+          <strong>Google App Engine</strong> - Hosting of API services.
+        </li>
+        <li>
+          <strong>Twilio</strong> - Real-time text message notifications of
+          current conditions.
+        </li>
+        <li>
+          <strong>Typeform</strong> - To subscribe users to text updates
+        </li>
+      </ul>
       <p>
         Source code for this website can be found{' '}
         <a href="https://github.com/chimera/sonomafireinfo.com" target="_blank">
