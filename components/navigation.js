@@ -1,5 +1,8 @@
+import ExternalLink from './external-link'
+import Sponsors from './sponsors'
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { sections } from '../config'
 
 Navigation.defaultProps = {}
@@ -15,24 +18,36 @@ export default function Navigation() {
             {section.heading}
           </h5>
           <nav className="list-group">
-            {section.links.map((link, key) => (
-              <a
-                href={link.url}
-                className="list-group-item list-group-item-action align-middle"
-                key={key}
-                target={link.url.startsWith('/') ? '' : '_blank'}
-              >
-                {link.url.startsWith('/') && (
-                  <i class="fa fa-chevron-right ml-2 float-right text-muted mt-1" />
-                )}
+            {section.links.map((link, key) => {
+              if (link.url) {
+                return (
+                  <ExternalLink
+                    url={link.url}
+                    className="list-group-item list-group-item-action align-middle"
+                    key={key}
+                  >
+                    <span className="mr-3">{link.icon}</span>
+                    {link.title}
+                  </ExternalLink>
+                )
+              }
 
-                <span className="mr-3">{link.icon}</span>
-                {link.title}
-              </a>
-            ))}
+              return (
+                <Link
+                  to={link.path}
+                  className="list-group-item list-group-item-action align-middle"
+                  key={key}
+                >
+                  <i class="fa fa-chevron-right ml-2 float-right text-muted mt-1" />
+                  <span className="mr-3">{link.icon}</span>
+                  {link.title}
+                </Link>
+              )
+            })}
           </nav>
         </div>
       ))}
+      <Sponsors />
     </div>
   )
 }

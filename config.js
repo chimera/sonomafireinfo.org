@@ -116,19 +116,21 @@ export const resources = {
 
 export const sections = [
   {
-    // heading: '',
     links: [
       {
-        id: 'importantInfo',
-        url: '/#important-info',
+        path: 'important-info',
         title: 'Important Info',
         icon: '⛑',
       },
       {
-        id: 'map',
-        url: '/#map',
+        path: 'map',
         title: 'Evac & Resources Map',
         icon: '🌎',
+      },
+      {
+        path: 'damage-map',
+        title: 'Damage Map',
+        icon: '🔥',
       },
     ],
   },
@@ -136,44 +138,37 @@ export const sections = [
     heading: 'Resources',
     links: [
       {
-        id: 'shelters',
-        url: '/#shelters',
+        path: 'shelters',
         title: 'Shelter',
         icon: '🏠',
       },
       {
-        id: 'animalShelters',
-        url: '/#animal-shelters',
+        path: 'animal-shelters',
         title: 'Animal Shelter',
         icon: '🐶',
       },
       {
-        id: 'gasStations',
-        url: '/#gas-stations',
+        path: 'gas-stations',
         title: 'Gas Stations',
         icon: '⛽️',
       },
       {
-        id: 'markets',
-        url: '/#markets',
+        path: 'markets',
         title: 'Markets',
         icon: '🥖',
       },
       {
-        id: 'pharmacies',
-        url: '/#pharmacies',
+        path: 'pharmacies',
         title: 'Pharmacies',
         icon: '💊',
       },
       {
-        id: 'services',
-        url: '/#services',
+        path: 'services',
         title: 'Support Services',
         icon: '👫',
       },
       {
-        id: 'resources',
-        url: '/#resources',
+        path: 'resources',
         title: 'General Resources',
         icon: '📚',
       },
@@ -183,14 +178,12 @@ export const sections = [
     heading: 'Help',
     links: [
       {
-        id: 'volunteer',
-        url: '/#volunteer',
+        path: 'volunteer',
         title: 'Volunteer',
         icon: '🤝',
       },
       {
-        id: 'donate',
-        url: '/#donate',
+        path: 'donate',
         title: 'Donate',
         icon: '💸',
       },
@@ -205,14 +198,12 @@ export const sections = [
     heading: 'News & Information',
     links: [
       {
-        id: 'updates',
-        url: '/#updates',
+        path: 'updates',
         title: 'Updates',
         icon: '🗞',
       },
       {
-        id: 'stats',
-        url: '/#stats',
+        path: 'stats',
         title: 'Stats',
         icon: '📈',
       },
@@ -232,14 +223,12 @@ export const sections = [
     heading: 'SFI.com Related',
     links: [
       {
-        id: 'contact',
-        url: '/#contact',
+        path: 'contact',
         title: 'Contact Us',
         icon: '💌',
       },
       {
-        id: 'about',
-        url: '/#about',
+        path: 'about',
         title: 'About Us',
         icon: 'ℹ️',
       },

@@ -4,9 +4,11 @@ import PropTypes from 'prop-types'
 
 MapPage.defaultProps = {}
 
-MapPage.propTypes = {}
+MapPage.propTypes = {
+  url: PropTypes.string.isRequired,
+}
 
-export default function MapPage({ height }) {
+export default function MapPage({ url }) {
   return (
     <div className="h-100">
       <BackBar />
@@ -14,11 +16,7 @@ export default function MapPage({ height }) {
         className="overlay"
         onClick={e => (e.target.style.pointerEvents = 'none')}
       />
-      <iframe
-        src="https://www.google.com/maps/d/embed?mid=1geX3Dfkc3wx3SY1Eqobmh67uSxE"
-        width="100%"
-        height="100%"
-      />
+      <iframe src={url} width="100%" height="100%" />
     </div>
   )
 }
