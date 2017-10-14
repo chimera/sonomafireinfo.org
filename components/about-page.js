@@ -39,11 +39,11 @@ export default function AboutPage({}) {
       <h3 className="mt-5">Core Team</h3>
       <p>An (alphabetical) list of the core team.</p>
       <ul>
-        <li>Abhi Yera</li>
+        <li>Abhi Yerra</li>
         <li>Dana Woodman</li>
         <li>Michael Doherty</li>
         <li>Nicole Clark</li>
-        <li>Tyler Croy</li>
+        <li>R. Tyler Croy</li>
       </ul>
       <h3 className="mt-5">Full Team</h3>
       <p>A (nearly) complete list of all our superdupercool volunteers:</p>
