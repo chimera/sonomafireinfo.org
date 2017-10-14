@@ -127,7 +127,7 @@ export const sections = [
       {
         id: 'map',
         url: '/#map',
-        title: 'Evacuation & Resources Map',
+        title: 'Evac & Resources Map',
         icon: '🌎',
       },
     ],
@@ -196,7 +196,7 @@ export const sections = [
       },
       {
         url: 'http://www.sonomacounty.recovers.org/',
-        title: 'Sonoma County Recovery network',
+        title: 'SoCo Recovery Network',
         icon: '🎁',
       },
     ],
@@ -223,7 +223,7 @@ export const sections = [
       },
       {
         url: 'https://opszero.typeform.com/to/ZmQUiq',
-        title: 'Signup for text message updates',
+        title: 'Signup for text updates',
         icon: '📞',
       },
     ],
