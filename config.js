@@ -4,7 +4,7 @@ export const resources = {
   'important-info': {
     icon: '⚠️',
     title: 'Important Info',
-    url: 'http://app.sonomafireinfo.com/v2/important_info.json'
+    url: 'http://app.sonomafireinfo.com/v2/important_info.json',
   },
   updates: {
     icon: '🗞',
@@ -19,7 +19,7 @@ export const resources = {
           </a>
         </p>
       )
-    }
+    },
   },
   volunteer: {
     icon: '🤝',
@@ -51,26 +51,26 @@ export const resources = {
           </p>
         </div>
       )
-    }
+    },
   },
   donate: {
     icon: '💸',
     title: 'Donate',
-    url: 'http://app.sonomafireinfo.com/v2/donations.json'
+    url: 'http://app.sonomafireinfo.com/v2/donations.json',
   },
   services: {
     icon: '👫',
     title: 'Support Services',
-    url: 'http://app.sonomafireinfo.com/v2/support_services.json'
+    url: 'http://app.sonomafireinfo.com/v2/support_services.json',
   },
   shelters: {
     icon: '🏠',
     title: 'Shelters',
-    url: 'http://app.sonomafireinfo.com/v2/shelters.json'
+    url: 'http://app.sonomafireinfo.com/v2/shelters.json',
   },
   'animal-shelters': {
     icon: '🐶',
-    title: 'Animal Shelters',
+    title: 'Animal Resources',
     url: 'http://app.sonomafireinfo.com/v2/animals.json',
     extraContent() {
       return (
@@ -85,33 +85,33 @@ export const resources = {
           </a>
         </p>
       )
-    }
+    },
   },
   'gas-stations': {
     icon: '⛽️',
     title: 'Gas Stations',
-    url: 'http://app.sonomafireinfo.com/v2/gas_stations.json'
+    url: 'http://app.sonomafireinfo.com/v2/gas_stations.json',
   },
   markets: {
     icon: '🥖',
     title: 'Markets',
-    url: 'http://app.sonomafireinfo.com/v2/markets.json'
+    url: 'http://app.sonomafireinfo.com/v2/markets.json',
   },
   pharmacies: {
     icon: '💊',
     title: 'Pharmacies',
-    url: 'http://app.sonomafireinfo.com/v2/pharmacies.json'
+    url: 'http://app.sonomafireinfo.com/v2/pharmacies.json',
   },
   resources: {
     icon: '📚',
     title: 'Resources',
-    url: 'http://app.sonomafireinfo.com/v2/resources.json'
+    url: 'http://app.sonomafireinfo.com/v2/resources.json',
   },
   stats: {
     icon: '📈',
     title: 'Stats',
-    url: 'http://app.sonomafireinfo.com/v2/stats.json'
-  }
+    url: 'http://app.sonomafireinfo.com/v2/stats.json',
+  },
 }
 
 export const sections = [
@@ -120,59 +120,44 @@ export const sections = [
       {
         path: 'important-info',
         title: 'Important Info',
-        icon: '⛑'
+        icon: '⛑',
       },
       {
         path: 'map',
         title: 'Evac & Resources Map',
-        icon: '🌎'
+        icon: '🌎',
       },
       {
         path: 'damage-map',
         title: 'Damage Map',
-        icon: '🔥'
-      }
-    ]
+        icon: '🔥',
+      },
+    ],
   },
   {
-    heading: 'Resources',
+    heading: 'Critical Resources',
     links: [
       {
         path: 'shelters',
         title: 'Shelter',
-        icon: '🏠'
+        icon: '🏠',
       },
       {
         path: 'animal-shelters',
-        title: 'Animal Shelter',
-        icon: '🐶'
-      },
-      {
-        path: 'gas-stations',
-        title: 'Gas Stations',
-        icon: '⛽️'
-      },
-      {
-        path: 'markets',
-        title: 'Markets',
-        icon: '🥖'
-      },
-      {
-        path: 'pharmacies',
-        title: 'Pharmacies',
-        icon: '💊'
+        title: 'Animal Resources',
+        icon: '🐶',
       },
       {
         path: 'services',
         title: 'Support Services',
-        icon: '👫'
+        icon: '👫',
       },
       {
         path: 'resources',
         title: 'General Resources',
-        icon: '📚'
-      }
-    ]
+        icon: '📚',
+      },
+    ],
   },
   {
     heading: 'Help',
@@ -180,19 +165,19 @@ export const sections = [
       {
         path: 'volunteer',
         title: 'Volunteer',
-        icon: '🤝'
+        icon: '🤝',
       },
       {
         path: 'donate',
         title: 'Donate',
-        icon: '💸'
+        icon: '💸',
       },
       {
         url: 'http://www.sonomacounty.recovers.org/',
         title: 'SoCo Recovery Network',
-        icon: '🎁'
-      }
-    ]
+        icon: '🎁',
+      },
+    ],
   },
   {
     heading: 'News & Information',
@@ -200,24 +185,44 @@ export const sections = [
       {
         path: 'updates',
         title: 'Updates',
-        icon: '🗞'
+        icon: '🗞',
       },
       {
         path: 'stats',
         title: 'Stats',
-        icon: '📈'
+        icon: '📈',
       },
       {
         url: 'https://twitter.com/sonomafireinfo',
         title: '@sonomafireinfo on Twitter',
-        icon: '🐥'
+        icon: '🐥',
       },
       {
         url: 'https://opszero.typeform.com/to/ZmQUiq',
         title: 'Signup for text updates',
-        icon: '📞'
-      }
-    ]
+        icon: '📞',
+      },
+    ],
+  },
+  {
+    heading: 'More Resources',
+    links: [
+      {
+        path: 'gas-stations',
+        title: 'Gas Stations',
+        icon: '⛽️',
+      },
+      {
+        path: 'markets',
+        title: 'Markets',
+        icon: '🥖',
+      },
+      {
+        path: 'pharmacies',
+        title: 'Pharmacies',
+        icon: '💊',
+      },
+    ],
   },
   {
     heading: 'SFI.com Related',
@@ -225,13 +230,13 @@ export const sections = [
       {
         path: 'contact',
         title: 'Contact Us',
-        icon: '💌'
+        icon: '💌',
       },
       {
         path: 'about',
         title: 'About Us',
-        icon: 'ℹ️'
-      }
-    ]
-  }
+        icon: 'ℹ️',
+      },
+    ],
+  },
 ]
