@@ -1,5 +1,4 @@
 import React from 'react'
-import phone from 'phone'
 import justNumbers from 'just-numbers'
 
 export default function PhoneLink({ number }) {
