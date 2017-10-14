@@ -13,6 +13,7 @@ export default function ShelterProperties({ item }) {
   const elder = item.elderCare
   const spanish = item.hablanEspanol
   const redCross = item.redCrossFacility
+  const medical = item.medical
 
   if (capacity || elder || spanish || redCross) {
     return (
@@ -24,19 +25,24 @@ export default function ShelterProperties({ item }) {
             </strong>
           )}
           {elder && (
-            <span className="mr-3" title="Has elder care">
+            <strong className="mr-3" title="Has elder care">
               <span className="mr-2">👵</span> Elder Care
-            </span>
+            </strong>
           )}
           {spanish && (
-            <span className="mr-3" title="Hablan Español">
+            <strong className="mr-3" title="Hablan Español">
               <span className="mr-2">🇲🇽</span> Hablan Español
-            </span>
+            </strong>
           )}
           {redCross && (
-            <span className="mr-3" title="Red Cross Facility">
+            <strong className="mr-3" title="Red Cross Facility">
               <span className="mr-2">🏥</span> Red Cross Facility
-            </span>
+            </strong>
+          )}
+          {medical && (
+            <strong className="mr-3" title="Medical">
+              <span className="mr-2">👩‍⚕️</span> Medical
+            </strong>
           )}
         </small>
       </div>

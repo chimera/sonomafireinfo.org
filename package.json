@@ -5,8 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "dev":
-      "NODE_ENV=development webpack-dev-server --open --inline --hot --content-base .",
+    "dev": "NODE_ENV=development webpack-dev-server --open --inline --hot --content-base .",
     "format": "prettier --write **/*.js"
   },
   "repository": {
@@ -25,6 +24,7 @@
     "camelcase-keys": "4.1.0",
     "fuse.js": "3.2.0",
     "html-webpack-plugin": "2.30.1",
+    "just-numbers": "1.0.3",
     "phone": "2.0.0-rc.1",
     "prop-types": "15.6.0",
     "react": "16.0.0",
