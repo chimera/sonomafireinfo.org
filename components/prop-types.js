@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 export const Resource = PropTypes.shape({
   icon: PropTypes.node.isRequire,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  description: PropTypes.string
 })
 
 export const NavLink = PropTypes.shape({
   icon: PropTypes.node.isRequire,
   title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 })
 
 export const NavSection = PropTypes.shape({
   links: PropTypes.arrayOf(NavLink).isRequired,
-  heading: PropTypes.string,
+  heading: PropTypes.string
 })
 
 export const Item = PropTypes.shape({
@@ -47,5 +47,5 @@ export const Item = PropTypes.shape({
   atCapacity: PropTypes.bool,
   elderCare: PropTypes.bool,
   hablanEspanol: PropTypes.bool,
-  redCrossFacility: PropTypes.bool,
+  redCrossFacility: PropTypes.bool
 })

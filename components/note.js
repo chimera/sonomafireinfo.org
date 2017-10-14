@@ -5,7 +5,7 @@ Note.defaultProps = {}
 
 Note.propTypes = {
   label: PropTypes.string.isRequired,
-  note: PropTypes.string.isRequired,
+  note: PropTypes.string.isRequired
 }
 
 export default function Note({ label, note }) {

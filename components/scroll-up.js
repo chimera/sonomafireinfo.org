@@ -5,7 +5,7 @@ export default class ScrollUp extends React.Component {
     super()
 
     this.state = {
-      intervalId: 0,
+      intervalId: 0
     }
   }
 

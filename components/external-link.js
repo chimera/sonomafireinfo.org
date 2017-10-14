@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 ExternalLink.defaultProps = {
-  className: '',
+  className: ''
 }
 
 ExternalLink.propTypes = {
   className: PropTypes.string,
-  url: PropTypes.string,
+  url: PropTypes.string
 }
 
 export default function ExternalLink({ children, className, url }) {

@@ -8,7 +8,7 @@ import { Resource } from './prop-types'
 Section.defaultProps = {}
 
 Section.propTypes = {
-  resource: Resource,
+  resource: Resource
 }
 
 export default function Section({ resource }) {

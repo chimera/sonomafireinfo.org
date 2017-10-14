@@ -14,7 +14,7 @@ export default function dataHandler(WrappedComponent, { title, url }) {
         loading: false,
         items: [],
         filtered: [],
-        search: '',
+        search: ''
       }
     }
 
@@ -29,7 +29,7 @@ export default function dataHandler(WrappedComponent, { title, url }) {
           items,
           filtered: items,
           error: null,
-          loading: false,
+          loading: false
         })
       } catch (error) {
         this.setState({ ...this.state, error: error })
@@ -51,8 +51,8 @@ export default function dataHandler(WrappedComponent, { title, url }) {
           'phone',
           'address',
           'donationNeeds',
-          'volunteerNeeds',
-        ],
+          'volunteerNeeds'
+        ]
       }
       const fuse = new Fuse(this.state.items, options)
 
@@ -61,7 +61,7 @@ export default function dataHandler(WrappedComponent, { title, url }) {
       this.setState({
         ...this.state,
         search: text,
-        filtered,
+        filtered
       })
     }
 

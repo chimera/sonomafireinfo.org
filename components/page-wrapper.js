@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 PageWrapper.defaultProps = { back: true }
 
 PageWrapper.propTypes = {
-  back: PropTypes.bool,
+  back: PropTypes.bool
 }
 
 export default function PageWrapper({ back, children }) {

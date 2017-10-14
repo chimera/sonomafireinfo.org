@@ -5,7 +5,7 @@ import { Item } from './prop-types'
 ShelterProperties.defaultProps = {}
 
 ShelterProperties.propTypes = {
-  item: Item,
+  item: Item
 }
 
 export default function ShelterProperties({ item }) {
