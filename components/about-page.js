@@ -25,6 +25,13 @@ export default function AboutPage({}) {
         Sonoma/Napa/Mendocino County fires.
       </p>
       <p>
+        The goal of sonomafireinfo.com is to collect, verify, and publish
+        up-to-date information from as many resources as possible. However, we
+        are not a volunteer or donation processing site. If you are able to
+        help in any way, please use our site to find a verified match for your
+        capabilities or goods.
+      </p>
+      <p>
         The headquarters (and birthplace) of SFI.com is{' '}
         <a href="http://www.chimeraarts.org/" target="_blank">
           Chimera Arts & Makerspace
