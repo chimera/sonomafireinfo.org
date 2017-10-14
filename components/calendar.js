@@ -8,7 +8,9 @@ Calendar.propTypes = {}
 export default function Calendar() {
   return (
     <div class="my-5">
-      <h5>Calendar</h5>
+      <h5 className="navigation-heading text-center text-muted my-3">
+        Calendar
+      </h5>
       <iframe
         className="airtable-embed"
         src="https://airtable.com/embed/shrzwXFwNUgHERufQ?backgroundColor=orange&viewControls=on"
