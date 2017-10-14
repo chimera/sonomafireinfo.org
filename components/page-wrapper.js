@@ -12,7 +12,7 @@ export default function PageWrapper({ back, children }) {
   return (
     <div>
       {back && <BackBar />}
-      <div class="container-fluid my-4">
+      <div class="container-fluid mt-4 mb-5">
         <div className="row">
           <div className="col-lg-6 mx-auto">{children}</div>
         </div>

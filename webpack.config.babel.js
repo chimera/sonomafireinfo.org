@@ -12,7 +12,7 @@ const config = {
   entry: ['babel-polyfill', './app.js'],
   output: {
     path: __dirname,
-    filename: 'build.js',
+    filename: 'build.[hash].js',
     publicPath: '/',
   },
   module: {

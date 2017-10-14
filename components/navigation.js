@@ -20,6 +20,7 @@ export default function Navigation() {
                 href={link.url}
                 className="list-group-item list-group-item-action align-middle"
                 key={key}
+                target={link.url.startsWith('/') ? '' : '_blank'}
               >
                 {link.url.startsWith('/') && (
                   <i class="fa fa-chevron-right ml-2 float-right text-muted mt-1" />
