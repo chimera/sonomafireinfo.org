@@ -76,9 +76,11 @@ export default function dataHandler(WrappedComponent, { title, url }) {
 
       return (
         <div>
-          <div className="mb-3">
-            <Search onChange={text => this.search(text)} />
-          </div>
+          {this.props.search && (
+            <div className="mb-3">
+              <Search onChange={text => this.search(text)} />
+            </div>
+          )}
           <WrappedComponent items={this.state.filtered} />
         </div>
       )

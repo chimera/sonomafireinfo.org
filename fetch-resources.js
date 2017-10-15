@@ -4,7 +4,11 @@ import camelCaseKeys from 'camelcase-keys'
 // make it more usable.
 function normalizeData(fields) {
   return fields
-    .map(item => camelCaseKeys(item.fields))
+    .map(item => {
+      const data = camelCaseKeys(item.fields)
+      data.id = item.id
+      return data
+    })
     .filter(item => Object.keys(item).length)
 }
 
