@@ -22,6 +22,7 @@
     "bootstrap": "4.0.0-beta",
     "camelcase-keys": "4.1.0",
     "fuse.js": "3.2.0",
+    "human-date": "1.4.0",
     "just-numbers": "1.0.3",
     "prop-types": "15.6.0",
     "react": "16.0.0",
