@@ -16,7 +16,7 @@ AirtableSheets = {
   important_info: {
     klass: :ImportantInfo,
     sort: {
-      "Name" => "asc",
+      "PriorityNumber" => "asc",
     },
   },
   support_services: {
