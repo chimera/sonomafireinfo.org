@@ -48,6 +48,9 @@ export default function GenericList({ items }) {
 
             {item.needs && <Note label="Needs" note={item.needs} />}
             {item.notes && <Note label="Notes" note={item.notes} />}
+            {item.description && (
+              <Note label="Description" note={item.description} />
+            )}
             {item.donationNeeds && (
               <Note label="Donation needs" note={item.donationNeeds} />
             )}

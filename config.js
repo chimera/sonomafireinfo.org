@@ -117,6 +117,11 @@ export const resources = {
     title: 'Información en Español',
     url: 'http://app.sonomafireinfo.com/v2/spanish.json',
   },
+  recovery: {
+    icon: '🔨',
+    title: 'Recovery',
+    url: 'http://app.sonomafireinfo.com/v2/recovery.json',
+  },
 }
 
 export const sections = [
@@ -162,6 +167,11 @@ export const sections = [
         path: 'services',
         title: 'Support Services',
         icon: '👫',
+      },
+      {
+        path: 'recovery',
+        title: 'Recovery',
+        icon: '🔨',
       },
       {
         path: 'resources',
