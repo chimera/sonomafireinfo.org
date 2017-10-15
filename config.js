@@ -112,6 +112,11 @@ export const resources = {
     title: 'Stats',
     url: 'http://app.sonomafireinfo.com/v2/stats.json',
   },
+  espanol: {
+    icon: '🇲🇽',
+    title: 'Información en Español',
+    url: 'http://app.sonomafireinfo.com/v2/spanish.json',
+  },
 }
 
 export const sections = [
@@ -162,6 +167,11 @@ export const sections = [
         path: 'resources',
         title: 'General Resources',
         icon: '📚',
+      },
+      {
+        path: 'espanol',
+        title: 'Información en Español',
+        icon: '🇲🇽',
       },
     ],
   },

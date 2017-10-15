@@ -9,7 +9,11 @@ function normalizeData(fields) {
       data.id = item.id
       return data
     })
-    .filter(item => Object.keys(item).length)
+    .filter(item => {
+      // If the item only has an ID, it is
+      // considered empty.
+      return Object.keys(item).length > 1
+    })
 }
 
 export default function fetchResources(url) {
