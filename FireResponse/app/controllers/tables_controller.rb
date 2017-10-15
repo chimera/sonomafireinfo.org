@@ -17,13 +17,25 @@ class TablesController < ApplicationController
         sort = v[:sort] rescue {}
         recs = v[:klass].to_s.constantize.all(sort: sort)
 
-        if v[:klass] == :Recovery && params.has_key?(:type)
+        case
+        when v[:klass] == :Recovery && params.has_key?(:type)
           recs = recs.select { |x| x.fields['Type'].include?(params[:type]) rescue false }
+        when v[:klass] == :School && params.has_key?(:district)
+          recs = recs.select { |x| x.fields['District'].include?(params[:district]) rescue false }
         end
+
+        items = if params.has_key?(:lang)
+                  recs.map do |i|
+                    i.spanish!
+                    i
+                  end
+                else
+                  recs
+                end
 
         {
           fields: recs.map { |x| x.column_mappings }.inject { |x,y| x.merge(y) },
-          items: recs,
+          items: items,
         }
       end
 

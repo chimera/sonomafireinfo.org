@@ -86,7 +86,25 @@ AirtableSheets.each do |k,v|
   klass = Class.new(Airrecord::Table) do
     self.base_key = "appsj7gOti4YuE2v1"
     self.table_name = v[:klass].to_s
+
+    attr_accessor :spanish_fields
+
+    def spanish!
+      @spanish_fields ||= {}
+
+      @fields.map do |key, value|
+        val = if value.kind_of?(String)
+                val = EasyTranslate.translate(value, :to => :spanish, api_key: ENV['GOOGLE_TRANSLATE_API']) rescue value
+              else
+                value
+              end
+
+        @spanish_fields[key] = val
+      end
+    end
   end
 
   Object.const_set(v[:klass], klass)
+
+
 end
