@@ -15,7 +15,9 @@ AirtableSheets = {
   },
   important_info: {
     klass: :ImportantInfo,
-    sort: { "Priority" => "desc" },
+    sort: {
+      "Name" => "asc",
+    },
   },
   support_services: {
     klass: :SupportServices,
@@ -67,6 +69,10 @@ AirtableSheets = {
   },
   team_members: {
     klass: :TeamMembers,
+    sort: { "Name" => "asc" },
+  },
+  spanish: {
+    klass: :Spanish,
     sort: { "Name" => "asc" },
   }
 }
