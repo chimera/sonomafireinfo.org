@@ -121,6 +121,7 @@ export const resources = {
     icon: '🔨',
     title: 'Recovery',
     url: 'http://app.sonomafireinfo.com/v2/recovery.json',
+    // /v2/recovery.json?type=Insurance
   },
 }
 

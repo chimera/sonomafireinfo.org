@@ -10,12 +10,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Section from './section'
 import ScrollUp from './scroll-up'
+import Tracker from './tracker'
 import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { resources } from '../config'
-
-Application.defaultProps = {}
-
-Application.propTypes = {}
 
 export default function Application() {
   return (
@@ -24,6 +21,7 @@ export default function Application() {
       <ScrollUp scrollStepInPx="1000" delayInMs="10" />
       <Router>
         <AutoScrollTop>
+          <Route path="/" render={Tracker} />
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/contact" component={ContactPage} />
