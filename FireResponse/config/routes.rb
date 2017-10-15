@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   end
 
   resources :texts
+  resources :translations
 end
