@@ -17,6 +17,10 @@ class TablesController < ApplicationController
         sort = v[:sort] rescue {}
         recs = v[:klass].to_s.constantize.all(sort: sort)
 
+        if v[:klass] == :Recovery && params.has_key?(:type)
+          recs = recs.select { |x| x.fields['Type'].include?(params[:type]) rescue false }
+        end
+
         {
           fields: recs.map { |x| x.column_mappings }.inject { |x,y| x.merge(y) },
           items: recs,
@@ -26,4 +30,6 @@ class TablesController < ApplicationController
       render json: records
     end
   end
+
+
 end

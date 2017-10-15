@@ -74,6 +74,10 @@ AirtableSheets = {
   spanish: {
     klass: :Spanish,
     sort: { "Name" => "asc" },
+  },
+  recovery: {
+    klass: :Recovery,
+    sort: { "Name" => "asc" },
   }
 }
 
