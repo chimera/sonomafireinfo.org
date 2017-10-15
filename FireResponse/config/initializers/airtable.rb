@@ -73,7 +73,7 @@ AirtableSheets = {
   },
   spanish: {
     klass: :Spanish,
-    sort: { "Name" => "asc" },
+    sort: { "Last Updated" => "desc" },
   },
   recovery: {
     klass: :Recovery,
