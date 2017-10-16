@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { GOOGLE_ANALYTICS_ID } from '../config'
 
-const INTERVAL = 250
+const INTERVAL = 100
 const TIMEOUT = 5000
 
 export default class GoogleTranslate extends React.Component {
