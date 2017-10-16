@@ -139,6 +139,11 @@ export const resources = {
     url: 'http://app.sonomafireinfo.com/v2/recovery.json',
     // /v2/recovery.json?type=Insurance
   },
+  schools: {
+    icon: '🎓',
+    title: 'Schools',
+    url: 'http://app.sonomafireinfo.com/v2/schools.json',
+  },
 }
 
 export const sections = [
@@ -189,6 +194,11 @@ export const sections = [
         path: 'recovery',
         title: 'Recovery',
         icon: '🔨',
+      },
+      {
+        path: 'schools',
+        title: 'Schools',
+        icon: '🎓',
       },
       {
         path: 'resources',
