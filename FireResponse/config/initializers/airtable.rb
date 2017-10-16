@@ -78,6 +78,10 @@ AirtableSheets = {
   recovery: {
     klass: :Recovery,
     sort: { "Name" => "asc" },
+  },
+  shoutouts: {
+    klass: :Shoutouts,
+    sort: { "Name" => "asc" },
   }
 }
 
