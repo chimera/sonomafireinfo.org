@@ -31,6 +31,9 @@ const config = {
       },
     ],
   },
+  externals: {
+    google: 'google',
+  },
   plugins: [
     new ExtractTextPlugin('output.css'),
     new webpack.IgnorePlugin(/\.\/locale$/),
