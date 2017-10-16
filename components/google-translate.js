@@ -60,7 +60,7 @@ export default class GoogleTranslate extends React.Component {
 
     return (
       <div>
-        <small class="text-muted">Translate this website:</small>
+        <small class="text-muted">Traducir este sitio</small>
         <div id="google_translate_element" />
       </div>
     )
