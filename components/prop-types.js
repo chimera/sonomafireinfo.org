@@ -25,7 +25,6 @@ export const Item = PropTypes.shape({
   name: PropTypes.string,
   description: PropTypes.string,
   notes: PropTypes.string,
-  description: PropTypes.string,
   needs: PropTypes.string,
   phone: PropTypes.string,
   email: PropTypes.string,

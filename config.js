@@ -1,5 +1,7 @@
 import React from 'react'
 
+export const GOOGLE_ANALYTICS_ID = 'UA-599674-49'
+
 export const resources = {
   'important-info': {
     icon: '⚠️',
@@ -57,6 +59,20 @@ export const resources = {
     icon: '💸',
     title: 'Donate',
     url: 'http://app.sonomafireinfo.com/v2/donations.json',
+    extraContent() {
+      return (
+        <p className="my-4 text-center">
+          <a
+            href="https://www.redwoodcu.org/northbayfirerelief"
+            className="btn btn-success"
+            target="_blank"
+          >
+            <span className=" mr-2 ">💰</span>
+            Donation Cash
+          </a>
+        </p>
+      )
+    },
   },
   services: {
     icon: '👫',
@@ -123,6 +139,11 @@ export const resources = {
     url: 'http://app.sonomafireinfo.com/v2/recovery.json',
     // /v2/recovery.json?type=Insurance
   },
+  schools: {
+    icon: '🎓',
+    title: 'Schools',
+    url: 'http://app.sonomafireinfo.com/v2/schools.json',
+  },
 }
 
 export const sections = [
@@ -173,6 +194,11 @@ export const sections = [
         path: 'recovery',
         title: 'Recovery',
         icon: '🔨',
+      },
+      {
+        path: 'schools',
+        title: 'Schools',
+        icon: '🎓',
       },
       {
         path: 'resources',

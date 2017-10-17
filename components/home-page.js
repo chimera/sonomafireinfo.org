@@ -1,4 +1,5 @@
 import Calendar from './calendar'
+import GoogleTranslate from './google-translate'
 import Logo from './logo'
 import Navigation from './navigation'
 import PageWrapper from './page-wrapper'
@@ -14,10 +15,13 @@ HomePage.propTypes = {}
 export default function HomePage() {
   return (
     <PageWrapper back={false}>
-      <div class="w-50 mx-auto text-center">
+      <div className="w-50 mx-auto text-center">
         <Logo />
       </div>
-      <div class="text-muted my-3 text-center">
+      <div className="text-center my-3">
+        <GoogleTranslate />
+      </div>
+      <div className="text-muted my-3 text-center">
         <small>
           Up-to-date and verified information regarding the fires in Sonoma
           County powered by a team of volunteers.{' '}
