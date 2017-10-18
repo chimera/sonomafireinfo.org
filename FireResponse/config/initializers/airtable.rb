@@ -7,7 +7,9 @@ AirtableSheets = {
   },
   shelters: {
     klass: :Shelters,
-    sort: { "Name" => "asc" },
+    sort: {
+      "Closed" => "asc",
+    },
   },
   resources: {
     klass: :Resources,

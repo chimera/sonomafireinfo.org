@@ -15,6 +15,7 @@ class TablesController < ApplicationController
     define_method("#{k}_v2") do
       records = ::Rails.cache.fetch("cache/#{k}/records_v2", expires_in: 30.seconds) do
         sort = v[:sort] rescue {}
+        puts sort
         recs = v[:klass].to_s.constantize.all(sort: sort)
 
         case
