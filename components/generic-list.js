@@ -5,6 +5,7 @@ import ExternalLink from './external-link'
 import Note from './note'
 import React from 'react'
 import ShelterProperties from './shelter-properties'
+import SubSection from './subsection'
 import PropTypes from 'prop-types'
 import { Item } from './prop-types'
 
@@ -14,7 +15,7 @@ GenericList.propTypes = {
   items: PropTypes.arrayOf(Item),
 }
 
-export default function GenericList({ items }) {
+export default function GenericList({ items, search }) {
   return (
     <ul className="list-group">
       {items.map((item, key) => {
@@ -53,6 +54,9 @@ export default function GenericList({ items }) {
             )}
             {item.volunteerNeeds && (
               <Note label="Volunteer needs" note={item.volunteerNeeds} />
+            )}
+            {item.type && (
+              <SubSection types={item.type} search={search}/>
             )}
           </li>
         )
