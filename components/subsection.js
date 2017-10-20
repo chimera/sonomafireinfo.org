@@ -10,6 +10,10 @@ SubSection.propTypes = {
 }
 
 export default function SubSection({ types, search }) {
+  if (!types || !types.length) {
+    return null
+  }
+
   return (
     <ul class="clearfix float-right small list-unstyled mt-2">
       {types.map((type, key, arr) => {

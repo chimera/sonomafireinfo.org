@@ -6,6 +6,7 @@ import Note from './note'
 import React from 'react'
 import ShelterProperties from './shelter-properties'
 import SubSection from './subsection'
+import GenericListTitle from './generic-list-title'
 import PropTypes from 'prop-types'
 import { Item } from './prop-types'
 
@@ -31,43 +32,17 @@ export default function GenericList({ items, query, onSearch }) {
       {items.map((item, key) => {
         return (
           <li className="list-group-item" key={key}>
-            {item.lastUpdated && (
-              <small className="float-md-right text-muted ml-md-1">
-                <LastUpdated date={item.lastUpdated} />
-              </small>
-            )}
-
-            <div>
-              {item.priority && <span class="mr-2">⚠️</span>}
-              {item.closed ? (
-                <span>
-                  <del>{item.name}</del>
-                  <small className="ml-3">⚠️ CLOSED</small>
-                </span>
-              ) : (
-                <ExternalLink
-                  url={item.website || item.source || item.facebookLink}
-                >
-                  {item.name || item.description}
-                </ExternalLink>
-              )}
-              {item.data && <strong class="ml-3">{item.data}</strong>}
-            </div>
-
+            <LastUpdated date={item.lastUpdated} />
+            <GenericListTitle item={item} />
             <ContactLinks item={item} />
             <ShelterProperties item={item} />
-
-            {item.quote && <Note note={item.quote} />}
-            {item.needs && <Note label="Needs" note={item.needs} />}
-            {item.notes && <Note label="Notes" note={item.notes} />}
-            {item.notas && <Note label="Notas" note={item.notas} />}
-            {item.donationNeeds && (
-              <Note label="Donation needs" note={item.donationNeeds} />
-            )}
-            {item.volunteerNeeds && (
-              <Note label="Volunteer needs" note={item.volunteerNeeds} />
-            )}
-            {item.type && <SubSection types={item.type} search={onSearch} />}
+            <Note note={item.quote} />
+            <Note label="Needs" note={item.needs} />
+            <Note label="Notes" note={item.notes} />
+            <Note label="Notas" note={item.notas} />
+            <Note label="Donation needs" note={item.donationNeeds} />
+            <Note label="Volunteer needs" note={item.volunteerNeeds} />
+            <SubSection types={item.type} search={onSearch} />
           </li>
         )
       })}

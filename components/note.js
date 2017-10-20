@@ -5,10 +5,14 @@ Note.defaultProps = {}
 
 Note.propTypes = {
   label: PropTypes.string,
-  note: PropTypes.string.isRequired,
+  note: PropTypes.string,
 }
 
 export default function Note({ label, note }) {
+  if (!note) {
+    return null
+  }
+
   return (
     <div className="mt-2 text-muted">
       <small>
