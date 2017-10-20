@@ -144,6 +144,11 @@ export const resources = {
     title: 'Schools',
     url: 'http://app.sonomafireinfo.com/v2/schools.json',
   },
+  testimony: {
+    icon: '📢',
+    title: 'Testimony',
+    url: 'http://app.sonomafireinfo.com/v2/shoutouts.json',
+  },
 }
 
 export const sections = [
@@ -285,6 +290,11 @@ export const sections = [
         path: 'about',
         title: 'About Us',
         icon: 'ℹ️',
+      },
+      {
+        path: 'testimony',
+        title: 'Testimony',
+        icon: '📢',
       },
     ],
   },

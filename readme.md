@@ -20,6 +20,12 @@ npm run dev
 
 ## Contributing
 
+- The `config.js` file contains code that generates the main menus as well as does the API requests
+  - To add a new menu item, add an entry to `sections`
+    - The order is important when adding items into `sections`
+  - Add an item to resources as well if the page is not a custom page
+    - If a standard resource, add to the `resources` list and this will get passed into the `<GenericList>` component as props.
+  - If custom, add a route to your custom component in `application.js`
 - Check issues list for how to contribute
 - Submit a PR describing what you did
 - Test on mobile! 60-80% of users are on mobile.
