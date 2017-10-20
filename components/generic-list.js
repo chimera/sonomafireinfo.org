@@ -5,6 +5,7 @@ import ExternalLink from './external-link'
 import Note from './note'
 import React from 'react'
 import ShelterProperties from './shelter-properties'
+import SubSection from './subsection'
 import PropTypes from 'prop-types'
 import { Item } from './prop-types'
 
@@ -12,10 +13,12 @@ GenericList.defaultProps = {}
 
 GenericList.propTypes = {
   items: PropTypes.arrayOf(Item),
+  query: PropTypes.string,
+  onSearch: PropTypes.func,
 }
 
-export default function GenericList({ items, search }) {
-  if (search && !items.length) {
+export default function GenericList({ items, query, onSearch }) {
+  if (query && !items.length) {
     return (
       <p className="text-warning my-4">
         <span class="mr-2">⚠️</span>
@@ -63,6 +66,7 @@ export default function GenericList({ items, search }) {
             {item.volunteerNeeds && (
               <Note label="Volunteer needs" note={item.volunteerNeeds} />
             )}
+            {item.type && <SubSection types={item.type} search={onSearch} />}
           </li>
         )
       })}
