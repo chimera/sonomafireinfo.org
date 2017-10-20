@@ -14,7 +14,15 @@ GenericList.propTypes = {
   items: PropTypes.arrayOf(Item),
 }
 
-export default function GenericList({ items }) {
+export default function GenericList({ items, search }) {
+  if (search && !items.length) {
+    return (
+      <p className="text-warning my-4">
+        <span class="mr-2">⚠️</span>
+        No results matched your search...
+      </p>
+    )
+  }
   return (
     <ul className="list-group">
       {items.map((item, key) => {

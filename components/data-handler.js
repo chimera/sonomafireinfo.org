@@ -81,7 +81,10 @@ export default function dataHandler(WrappedComponent, { title, url }) {
               <Search onChange={text => this.search(text)} />
             </div>
           )}
-          <WrappedComponent items={this.state.filtered} />
+          <WrappedComponent
+            items={this.state.filtered}
+            search={this.state.search}
+          />
         </div>
       )
     }
