@@ -11,20 +11,21 @@ SubSection.propTypes = {
 
 export default function SubSection({ types, search }) {
   return (
-    <ul class="display-flex position-relative float-right small list-unstyled">
+    <ul class="clearfix float-right small list-unstyled mt-2">
       {types.map((type, key, arr) => {
         return (
-          <li class="d-inline-block ml-1" key={key}>
-            <a
-              class="d-inline-block"
-              href="#"
-              onClick={e => {
-                e.preventDefault()
-                search(type)
-              }}
-            >
-              {type}
-            </a>
+          <li class="d-inline-block ml-2" key={key}>
+            <small>
+              <a
+                href="#"
+                onClick={e => {
+                  e.preventDefault()
+                  search(type)
+                }}
+              >
+                {type}
+              </a>
+            </small>
           </li>
         )
       })}
