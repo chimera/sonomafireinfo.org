@@ -60,6 +60,7 @@ export default function GenericList({ items, query, onSearch }) {
             {item.quote && <Note note={item.quote} />}
             {item.needs && <Note label="Needs" note={item.needs} />}
             {item.notes && <Note label="Notes" note={item.notes} />}
+            {item.notas && <Note label="Notas" note={item.notas} />}
             {item.donationNeeds && (
               <Note label="Donation needs" note={item.donationNeeds} />
             )}
