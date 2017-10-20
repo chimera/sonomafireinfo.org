@@ -93,8 +93,8 @@ export default function dataHandler(WrappedComponent, { title, url }) {
           )}
           <WrappedComponent
             items={this.state.filtered}
-            search={this.state.search}
-            searcher={type => this.search(type)}
+            query={this.state.search}
+            onSearch={type => this.search(type)}
           />
         </div>
       )
