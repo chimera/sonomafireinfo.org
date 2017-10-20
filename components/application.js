@@ -35,7 +35,7 @@ export default function Application() {
             <Route
               path="/damage-map"
               render={() => (
-                <MapPage url="https://api.mapbox.com/styles/v1/robinkraft/cj8nn4lvp7yoq2ro1klhjltw8.html?title=true&access_token=pk.eyJ1Ijoicm9iaW5rcmFmdCIsImEiOiJQLUp2RU9NIn0.B20c6fiHx0NCgfSOE3HYbw#15.64/38.4919/-122.7139/16.6" />
+                <MapPage url="http://calfire-forestry.maps.arcgis.com/apps/PublicInformation/index.html?appid=5bbcbed430ad45e5a38e6be155ef5fec" />
               )}
             />
 
