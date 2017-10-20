@@ -55,9 +55,7 @@ export default function GenericList({ items, search }) {
             {item.volunteerNeeds && (
               <Note label="Volunteer needs" note={item.volunteerNeeds} />
             )}
-            {item.type && (
-              <SubSection types={item.type} search={search}/>
-            )}
+            {item.type && <SubSection types={item.type} search={search} />}
           </li>
         )
       })}

@@ -56,9 +56,12 @@ export default function dataHandler(WrappedComponent, { title, url }) {
         keys: this.state.items[0].type ? keys.concat('type') : keys,
       }
 
-      const fuse = new Fuse(this.state.items.map((item, key) => {
-        return item.type ? { type: item.type.join(' '), ...item} : item
-      }), options)
+      const fuse = new Fuse(
+        this.state.items.map((item, key) => {
+          return item.type ? { type: item.type.join(' '), ...item } : item
+        }),
+        options
+      )
 
       const filtered = text ? fuse.search(text) : this.state.items
 
@@ -82,10 +85,16 @@ export default function dataHandler(WrappedComponent, { title, url }) {
         <div>
           {this.props.search && (
             <div className="mb-3">
-              <Search onChange={text => this.search(text)} text={this.state.search} />
+              <Search
+                onChange={text => this.search(text)}
+                text={this.state.search}
+              />
             </div>
           )}
-          <WrappedComponent items={this.state.filtered} search={type => this.search(type)}/>
+          <WrappedComponent
+            items={this.state.filtered}
+            search={type => this.search(type)}
+          />
         </div>
       )
     }
