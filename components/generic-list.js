@@ -13,12 +13,12 @@ GenericList.defaultProps = {}
 
 GenericList.propTypes = {
   items: PropTypes.arrayOf(Item),
-  search: PropTypes.string,
-  searcher: PropTypes.func,
+  query: PropTypes.string,
+  onSearch: PropTypes.func,
 }
 
-export default function GenericList({ items, search, searcher }) {
-  if (search && !items.length) {
+export default function GenericList({ items, query, onSearch }) {
+  if (query && !items.length) {
     return (
       <p className="text-warning my-4">
         <span class="mr-2">⚠️</span>
@@ -66,7 +66,7 @@ export default function GenericList({ items, search, searcher }) {
             {item.volunteerNeeds && (
               <Note label="Volunteer needs" note={item.volunteerNeeds} />
             )}
-            {item.type && <SubSection types={item.type} search={searcher} />}
+            {item.type && <SubSection types={item.type} search={onSearch} />}
           </li>
         )
       })}
