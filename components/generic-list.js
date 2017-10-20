@@ -46,6 +46,7 @@ export default function GenericList({ items }) {
             <ContactLinks item={item} />
             <ShelterProperties item={item} />
 
+            {item.quote && <Note note={item.quote} />}
             {item.needs && <Note label="Needs" note={item.needs} />}
             {item.notes && <Note label="Notes" note={item.notes} />}
             {item.donationNeeds && (
