@@ -27,7 +27,8 @@ export default function HomePage() {
           County powered by a team of volunteers.{' '}
           <Link to="about">More...</Link>
           <br />
-          Text your zip code to <strong>888-777</strong> for official local government updates..
+          Text your zip code to <strong>888-777</strong> for official local
+          government updates.
         </small>
       </div>
       <Navigation />

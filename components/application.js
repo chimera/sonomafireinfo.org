@@ -31,7 +31,7 @@ export default function Application() {
             <Route
               path="/map"
               render={() => (
-                <MapPage url="https://www.google.com/maps/d/embed?mid=1geX3Dfkc3wx3SY1Eqobmh67uSxE" />
+                <MapPage url="http://calfire-forestry.maps.arcgis.com/apps/webappviewer/index.html?id=38d4bb5734154cbd8c26a4fbb68e2f49" />
               )}
             />
             <Route
