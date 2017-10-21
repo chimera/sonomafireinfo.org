@@ -167,7 +167,7 @@ export const sections = [
       },
       {
         path: 'map',
-        title: 'Evac & Resources Map',
+        title: 'Evacuation Areas Map',
         icon: '🌎',
       },
       {
