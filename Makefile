@@ -6,12 +6,11 @@ run-docker:
 	docker build -t sonomafireinfo .
 	docker run -it -p 8081:80 sonomafireinfo
 
-
 build:
 	sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
-	echo $$STAGING_GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/gcloud-service-key.json
+	echo $$GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/gcloud-service-key.json
 	sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
-	sudo /opt/google-cloud-sdk/bin/gcloud config set project $$STAGING_GCLOUD
+	sudo /opt/google-cloud-sdk/bin/gcloud config set project $(GCLOUD)
 
 	docker build --build-arg ENVKEY=$$SONOMAFIRE_ENVKEY -t sonomafireinfo:$(RELEASE) .
 	docker tag sonomafireinfo:$(RELEASE) gcr.io/opszero-173723/sonomafireinfo:$(RELEASE)
@@ -25,5 +24,5 @@ deploy-%:
 	sudo mv ./kubectl /usr/local/bin/kubectl
 	KUBECONFIG=./kubeconfig sudo -E /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials staging --zone us-west1-a --project $(CLOUD)
 	sudo chmod 664 ./kubeconfig
-	KUBECONFIG=$(KUBECONFIG) kubectl set image deployment/$(DEPLOYMENT) $(CONTAINER)=gcr.io/$(CLOUD)/sonomafireinfo:$(COMMIT)
+	KUBECONFIG=$(KUBECONFIG) kubectl set image deployment/sonomafireinfo $(CONTAINER)=gcr.io/$(CLOUD)/sonomafireinfo:$(COMMIT)
 
