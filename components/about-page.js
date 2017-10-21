@@ -96,7 +96,7 @@ export default function AboutPage({}) {
       </ul>
       <p>
         Source code for this website can be found{' '}
-        <a href="https://github.com/chimera/sonomafireinfo.com" target="_blank">
+        <a href="https://github.com/chimera/sonomafireinfo.org" target="_blank">
           here
         </a>.
       </p>

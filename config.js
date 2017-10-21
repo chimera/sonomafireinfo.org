@@ -144,6 +144,11 @@ export const resources = {
     title: 'Schools',
     url: 'http://app.sonomafireinfo.com/v2/schools.json',
   },
+  testimony: {
+    icon: '📢',
+    title: 'Testimony',
+    url: 'http://app.sonomafireinfo.com/v2/shoutouts.json',
+  },
 }
 
 export const sections = [
@@ -176,16 +181,6 @@ export const sections = [
     heading: 'Critical Resources',
     links: [
       {
-        path: 'shelters',
-        title: 'Shelters',
-        icon: '🏠',
-      },
-      {
-        path: 'animal-shelters',
-        title: 'Animal Resources',
-        icon: '🐶',
-      },
-      {
         path: 'services',
         title: 'Support Services',
         icon: '👫',
@@ -196,6 +191,21 @@ export const sections = [
         icon: '🔨',
       },
       {
+        path: 'espanol',
+        title: 'Información en Español',
+        icon: '🇲🇽',
+      },
+      {
+        path: 'shelters',
+        title: 'Shelters',
+        icon: '🏠',
+      },
+      {
+        path: 'animal-shelters',
+        title: 'Animal Resources',
+        icon: '🐶',
+      },
+      {
         path: 'schools',
         title: 'Schools',
         icon: '🎓',
@@ -204,11 +214,6 @@ export const sections = [
         path: 'resources',
         title: 'General Resources',
         icon: '📚',
-      },
-      {
-        path: 'espanol',
-        title: 'Información en Español',
-        icon: '🇲🇽',
       },
     ],
   },
@@ -285,6 +290,11 @@ export const sections = [
         path: 'about',
         title: 'About Us',
         icon: 'ℹ️',
+      },
+      {
+        path: 'testimony',
+        title: 'Testimony',
+        icon: '📢',
       },
     ],
   },

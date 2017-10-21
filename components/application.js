@@ -1,7 +1,6 @@
 import AboutPage from './about-page'
 import AutoScrollTop from './auto-scroll-top'
 import ContactPage from './contact-page'
-import AlertBar from './alert-bar'
 import ErrorBoundary from './error-boundary'
 import HomePage from './home-page'
 import MapPage from './map-page'
@@ -17,7 +16,6 @@ import { resources } from '../config'
 export default function Application() {
   return (
     <ErrorBoundary>
-      <AlertBar />
       <ScrollUp scrollStepInPx="1000" delayInMs="10" />
       <Router>
         <AutoScrollTop>
@@ -35,7 +33,7 @@ export default function Application() {
             <Route
               path="/damage-map"
               render={() => (
-                <MapPage url="https://api.mapbox.com/styles/v1/robinkraft/cj8nn4lvp7yoq2ro1klhjltw8.html?title=true&access_token=pk.eyJ1Ijoicm9iaW5rcmFmdCIsImEiOiJQLUp2RU9NIn0.B20c6fiHx0NCgfSOE3HYbw#15.64/38.4919/-122.7139/16.6" />
+                <MapPage url="http://calfire-forestry.maps.arcgis.com/apps/PublicInformation/index.html?appid=5bbcbed430ad45e5a38e6be155ef5fec" />
               )}
             />
 
