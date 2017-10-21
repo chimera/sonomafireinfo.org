@@ -36,7 +36,6 @@ export default function GenericList({ items, query, onSearch }) {
             <GenericListTitle item={item} />
             <ContactLinks item={item} />
             <ShelterProperties item={item} />
-            <Note note={item.quote} />
             <Note label="Needs" note={item.needs} />
             <Note label="Notes" note={item.notes} />
             <Note label="Notas" note={item.notas} />

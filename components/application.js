@@ -1,5 +1,6 @@
 import AboutPage from './about-page'
 import AutoScrollTop from './auto-scroll-top'
+import CalendarPage from './calendar-page'
 import ContactPage from './contact-page'
 import ErrorBoundary from './error-boundary'
 import HomePage from './home-page'
@@ -9,6 +10,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Section from './section'
 import ScrollUp from './scroll-up'
+import TestimonyPage from './testimony-page'
 import Tracker from './tracker'
 import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { resources } from '../config'
@@ -24,6 +26,8 @@ export default function Application() {
             <Route exact path="/" component={HomePage} />
             <Route path="/contact" component={ContactPage} />
             <Route path="/about" component={AboutPage} />
+            <Route path="/calendar" component={CalendarPage} />
+            <Route path="/testimony" component={TestimonyPage} />
             <Route
               path="/map"
               render={() => (

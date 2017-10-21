@@ -31,7 +31,6 @@ export default function HomePage() {
         </small>
       </div>
       <Navigation />
-      <Calendar />
       <Sponsors />
     </PageWrapper>
   )
