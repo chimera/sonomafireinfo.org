@@ -181,16 +181,6 @@ export const sections = [
     heading: 'Critical Resources',
     links: [
       {
-        path: 'shelters',
-        title: 'Shelters',
-        icon: '🏠',
-      },
-      {
-        path: 'animal-shelters',
-        title: 'Animal Resources',
-        icon: '🐶',
-      },
-      {
         path: 'services',
         title: 'Support Services',
         icon: '👫',
@@ -201,6 +191,21 @@ export const sections = [
         icon: '🔨',
       },
       {
+        path: 'espanol',
+        title: 'Información en Español',
+        icon: '🇲🇽',
+      },
+      {
+        path: 'shelters',
+        title: 'Shelters',
+        icon: '🏠',
+      },
+      {
+        path: 'animal-shelters',
+        title: 'Animal Resources',
+        icon: '🐶',
+      },
+      {
         path: 'schools',
         title: 'Schools',
         icon: '🎓',
@@ -209,11 +214,6 @@ export const sections = [
         path: 'resources',
         title: 'General Resources',
         icon: '📚',
-      },
-      {
-        path: 'espanol',
-        title: 'Información en Español',
-        icon: '🇲🇽',
       },
     ],
   },
