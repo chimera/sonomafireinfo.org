@@ -1,0 +1,18 @@
+dependencies:
+  override:
+    - make circle-gcloud-auth
+
+test:
+  override:
+    - make build
+
+deployment:
+  gcp:
+    branch: gh-pages
+    commands:
+      - make deploy-staging
+
+  prod:
+    branch: prod
+    commands:
+      - make deploy-prod
