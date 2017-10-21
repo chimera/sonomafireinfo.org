@@ -1,7 +1,6 @@
 import AboutPage from './about-page'
 import AutoScrollTop from './auto-scroll-top'
 import ContactPage from './contact-page'
-import AlertBar from './alert-bar'
 import ErrorBoundary from './error-boundary'
 import HomePage from './home-page'
 import MapPage from './map-page'
@@ -17,7 +16,6 @@ import { resources } from '../config'
 export default function Application() {
   return (
     <ErrorBoundary>
-      <AlertBar />
       <ScrollUp scrollStepInPx="1000" delayInMs="10" />
       <Router>
         <AutoScrollTop>
