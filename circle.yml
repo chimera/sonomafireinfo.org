@@ -1,7 +1,3 @@
-dependencies:
-  override:
-    - make circle-gcloud-auth
-
 test:
   override:
     - make build
