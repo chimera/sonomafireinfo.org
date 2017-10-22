@@ -22,7 +22,7 @@ deploy-%:
 	sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(shell curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 	sudo chmod +x ./kubectl
 	sudo mv ./kubectl /usr/local/bin/kubectl
-	KUBECONFIG=./kubeconfig sudo -E /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials staging --zone us-west1-a --project $(CLOUD)
+	KUBECONFIG=./kubeconfig sudo -E /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials sonomafireinfo --zone us-west1-a --project $(CLOUD)
 	sudo chmod 664 ./kubeconfig
 	KUBECONFIG=$(KUBECONFIG) kubectl set image deployment/sonomafireinfo $(CONTAINER)=gcr.io/$(CLOUD)/sonomafireinfo:$(COMMIT)
 
