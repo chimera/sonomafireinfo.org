@@ -24,5 +24,5 @@ deploy-%:
 	sudo mv ./kubectl /usr/local/bin/kubectl
 	KUBECONFIG=./kubeconfig sudo -E /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials sonomafireinfo --zone us-west1-a --project $(CLOUD)
 	sudo chmod 664 ./kubeconfig
-	KUBECONFIG=$(KUBECONFIG) kubectl set image deployment/sonomafireinfo $(CONTAINER)=gcr.io/$(CLOUD)/sonomafireinfo:$(COMMIT)
+	KUBECONFIG=$(KUBECONFIG) kubectl set image deployment/sonomafireinfo sonomafireinfo=gcr.io/$(CLOUD)/sonomafireinfo:$(COMMIT)
 
