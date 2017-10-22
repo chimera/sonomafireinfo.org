@@ -103,21 +103,6 @@ export const resources = {
       )
     },
   },
-  'gas-stations': {
-    icon: '⛽️',
-    title: 'Gas Stations',
-    url: 'http://app.sonomafireinfo.com/v2/gas_stations.json',
-  },
-  markets: {
-    icon: '🥖',
-    title: 'Markets',
-    url: 'http://app.sonomafireinfo.com/v2/markets.json',
-  },
-  pharmacies: {
-    icon: '💊',
-    title: 'Pharmacies',
-    url: 'http://app.sonomafireinfo.com/v2/pharmacies.json',
-  },
   resources: {
     icon: '📚',
     title: 'Resources',
@@ -153,12 +138,38 @@ export const resources = {
 
 export const sections = [
   {
+    heading: 'Get Updates',
     links: [
+      {
+        url: 'https://twitter.com/sonomafireinfo',
+        title: '@sonomafireinfo on Twitter',
+        icon: <i className="fa fa-twitter" style={{ color: '#2aa3f0' }} />,
+      },
+      {
+        url: 'https://www.facebook.com/sonomafireinfo',
+        title: 'SFI.org Facebook page',
+        icon: <i className="fa fa-facebook" style={{ color: '#3B5998' }} />,
+      },
+      {
+        url: 'https://opszero.typeform.com/to/ZmQUiq',
+        title: 'Signup for text updates',
+        icon: '📞',
+      },
       {
         path: 'updates',
         title: 'Recent Updates',
         icon: '🗞',
         // highlight: true,
+      },
+    ],
+  },
+  {
+    heading: 'Get Info',
+    links: [
+      {
+        path: 'damage-map',
+        title: 'Damage Map',
+        icon: '🔥',
       },
       {
         path: 'important-info',
@@ -166,19 +177,30 @@ export const sections = [
         icon: '⛑',
       },
       {
-        path: 'map',
-        title: 'Evac & Resources Map',
-        icon: '🌎',
+        path: 'stats',
+        title: 'Stats',
+        icon: '📈',
       },
       {
-        path: 'damage-map',
-        title: 'Damage Map',
-        icon: '🔥',
+        path: 'schools',
+        title: 'Schools',
+        icon: '🎓',
       },
+      {
+        path: 'animal-shelters',
+        title: 'Animal Resources',
+        icon: '🐶',
+      },
+      {
+        path: 'espanol',
+        title: 'Información en Español',
+        icon: '🇲🇽',
+      },
+      // TODO: Government resources
     ],
   },
   {
-    heading: 'Critical Resources',
+    heading: 'Get Support',
     links: [
       {
         path: 'services',
@@ -191,34 +213,24 @@ export const sections = [
         icon: '🔨',
       },
       {
-        path: 'espanol',
-        title: 'Información en Español',
-        icon: '🇲🇽',
-      },
-      {
         path: 'shelters',
         title: 'Shelters',
         icon: '🏠',
-      },
-      {
-        path: 'animal-shelters',
-        title: 'Animal Resources',
-        icon: '🐶',
-      },
-      {
-        path: 'schools',
-        title: 'Schools',
-        icon: '🎓',
       },
       {
         path: 'resources',
         title: 'General Resources',
         icon: '📚',
       },
+      {
+        path: 'map',
+        title: 'Evacuation Area Map',
+        icon: '🌎',
+      },
     ],
   },
   {
-    heading: 'Help',
+    heading: 'Give Support',
     links: [
       {
         path: 'volunteer',
@@ -239,51 +251,21 @@ export const sections = [
     ],
   },
   {
-    heading: 'Information',
+    heading: 'Calendar',
     links: [
       {
-        path: 'stats',
-        title: 'Stats',
-        icon: '📈',
-      },
-      {
-        url: 'https://twitter.com/sonomafireinfo',
-        title: '@sonomafireinfo on Twitter',
-        icon: '🐥',
-      },
-      {
-        url: 'https://opszero.typeform.com/to/ZmQUiq',
-        title: 'Signup for text updates',
-        icon: '📞',
+        path: 'calendar',
+        title: 'Calendar',
+        icon: '📅',
       },
     ],
   },
   {
-    heading: 'More Resources',
-    links: [
-      {
-        path: 'gas-stations',
-        title: 'Gas Stations',
-        icon: '⛽️',
-      },
-      {
-        path: 'markets',
-        title: 'Markets',
-        icon: '🥖',
-      },
-      {
-        path: 'pharmacies',
-        title: 'Pharmacies',
-        icon: '💊',
-      },
-    ],
-  },
-  {
-    heading: 'SFI.com Related',
+    heading: 'About Us',
     links: [
       {
         path: 'contact',
-        title: 'Contact Us',
+        title: 'Submit Leads',
         icon: '💌',
       },
       {
