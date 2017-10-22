@@ -9,6 +9,8 @@ COPY . /usr/share/nginx/html
 
 WORKDIR /usr/share/nginx/html
 
-RUN npm install && npm run build
+RUN npm install
+RUN npm rebuild node-sass
+RUN npm run build
 
 # WORKDIR /app
