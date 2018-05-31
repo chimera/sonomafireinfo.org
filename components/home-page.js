@@ -17,6 +17,11 @@ export default function HomePage() {
     <PageWrapper back={false}>
       <div className="w-50 mx-auto text-center">
         <Logo />
+        <div className="text-center">
+          This site is no longer being maintained, so some pages maybe broken.
+          For current lists of resources, please visit:{' '}
+          <a href="https://www.sonomacountyrecovers.org/">sonomacountyrecovers.org</a>
+        </div>
       </div>
       <div className="text-center my-3">
         <GoogleTranslate />
