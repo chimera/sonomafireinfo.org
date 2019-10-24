@@ -18,13 +18,9 @@ export default function HomePage() {
       <div className="w-50 mx-auto text-center">
         <Logo />
         <div className="text-center">
-          This site is no longer being maintained, so some pages maybe broken.
-          For current lists of resources, please visit:{' '}
-          <a href="https://www.sonomacountyrecovers.org/">sonomacountyrecovers.org</a>
+          This site <strong>not</strong> up to date for the Kincade Fire.
+          Please refer to us on <a href="https://twitter.com/sonomafireinfo">@sonomafireinfo</a> for updates as the fire develops.
         </div>
-      </div>
-      <div className="text-center my-3">
-        <GoogleTranslate />
       </div>
       <div className="text-muted my-3 text-center">
         <small>
